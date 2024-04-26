@@ -1,9 +1,9 @@
 import {useAuth, KeycloackService, AuthedUser} from "@komune-io/g2"
 import {Permissions, mutablePermissions, usePermissionListQuery, useRoleListQuery,} from "./roles";
 import { Routes, routesAuthorizations, RoutesRoles } from "./routes";
-import { city as apiKey } from "@komune-io/apikey-domain"
-import { city as organization } from "@komune-io/organization-domain"
-import { city as user } from "@komune-io/user-domain"
+import { io as apiKey } from "@komune-io/apikey-domain"
+import { io as organization } from "@komune-io/organization-domain"
+import { io as user } from "@komune-io/user-domain"
 
 type StaticServices = {
     hasUserRouteAuth: {
@@ -17,9 +17,9 @@ type StaticServices = {
 }
 
 const policies = {
-    apiKey: apiKey.smartb.im.apikey.domain.policies.ApiKeyPolicies,
-    organization: organization.smartb.im.f2.organization.domain.policies.OrganizationPolicies,
-    user: user.smartb.im.f2.user.domain.policies.UserPolicies
+    apiKey: apiKey.komune.im.apikey.domain.policies.ApiKeyPolicies,
+    organization: organization.komune.im.f2.organization.domain.policies.OrganizationPolicies,
+    user: user.komune.im.f2.user.domain.policies.UserPolicies
 }
 
 const staticServices: KeycloackService<StaticServices, Permissions> = {

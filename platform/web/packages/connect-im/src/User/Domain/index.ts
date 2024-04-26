@@ -19,7 +19,7 @@ export interface Address {
   city: string
 }
 
-export interface User extends city.smartb.im.f2.user.domain.model.UserDTO {}
+export interface User extends io.komune.im.f2.user.domain.model.UserDTO {}
 
 export interface FlatUser {
   id: UserId

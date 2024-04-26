@@ -1,5 +1,5 @@
 import { Address } from '../../Commons'
-import {city} from "@komune-io/organization-domain"
+import {io} from "@komune-io/organization-domain"
 
 export const classes = `interface OrgCreationClasses {
   siretForm?: string
@@ -26,7 +26,7 @@ export type OrganizationRef = {
   roles: string[]
 }
 
-export interface Organization extends city.smartb.im.f2.organization.domain.model.OrganizationDTO {}
+export interface Organization extends io.komune.im.f2.organization.domain.model.OrganizationDTO {}
 
 export interface FlatOrganization {
   id: OrganizationId

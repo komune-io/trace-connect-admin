@@ -4,7 +4,7 @@ import { FormComposable, FormComposableField, FormComposableState, useTheme } fr
 import { useOrganizationFormFields } from "connect-im";
 import { getOptionsOfStatusValues, getOrgRolesOptions, useExtendedAuth } from "components";
 import { usePolicies } from "../../../Policies/usePolicies";
-import { city } from "@komune-io/organization-domain"
+import { io } from "@komune-io/organization-domain"
 
 export interface OrganizationFormProps {
     isLoading: boolean
@@ -15,7 +15,7 @@ export interface OrganizationFormProps {
     myOrganization?: boolean
 }
 
-export const OrgStatusValues = city.smartb.im.f2.organization.domain.model.OrganizationStatusValues
+export const OrgStatusValues = io.komune.im.f2.organization.domain.model.OrganizationStatusValues
 
 export const OrganizationForm = (props: OrganizationFormProps) => {
     const { isLoading, formState, readOnly = false, isUpdate = false, myOrganization} = props

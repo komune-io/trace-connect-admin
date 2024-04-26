@@ -1,3 +1,3 @@
-import { city } from "@komune-io/apikey-domain"
+import { io } from "@komune-io/apikey-domain"
 
-export interface ApiKeyDTO extends city.smartb.im.apikey.domain.model.ApiKeyDTO {}
+export interface ApiKeyDTO extends io.komune.im.apikey.domain.model.ApiKeyDTO {}

@@ -1,7 +1,7 @@
 { 
   "name": "example-web",
   "version": "1.0.0",
-  "author": "SmartB",
+  "author": "Komune",
   "license": "Apache-2.0",
   "private": true,
   "devDependencies": {
