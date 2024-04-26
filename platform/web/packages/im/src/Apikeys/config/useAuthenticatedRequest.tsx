@@ -1,8 +1,8 @@
 import { useExtendedAuth } from "components";
-import { RequestProps } from "@smartb/g2";
+import { RequestProps } from "@komune-io/g2";
 import { useMemo } from "react";
-import { i2Config } from '@smartb/g2-providers'
-import { fsConfig } from "@smartb/g2";
+import { i2Config } from '@komune-io/g2-providers'
+import { fsConfig } from "@komune-io/g2";
 
 
 export const useNoAuthenticatedRequest = (): RequestProps => {

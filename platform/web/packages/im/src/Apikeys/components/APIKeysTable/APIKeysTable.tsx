@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Chip, ColumnFactory, useTable } from "@smartb/g2";
+import { Chip, ColumnFactory, useTable } from "@komune-io/g2";
 import { TableCellAdmin, getUserRoleColor } from "components";
 import { useTranslation } from "react-i18next";
 import { Stack, Typography } from "@mui/material";

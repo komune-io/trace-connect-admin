@@ -1,6 +1,6 @@
-import {CommandParams, useCommandRequest} from "@smartb/g2";
+import {CommandParams, useCommandRequest} from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../config";
-import { city } from "@smartb/apikey-domain"
+import { city } from "@komune-io/apikey-domain"
 
 export interface ApiKeyAddCommand extends city.smartb.im.apikey.domain.command.ApiKeyOrganizationAddCommandDTO {}
 

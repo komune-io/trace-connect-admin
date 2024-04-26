@@ -1,4 +1,4 @@
-import {CommandParams, FilePath, useCommandRequest } from "@smartb/g2";
+import {CommandParams, FilePath, useCommandRequest } from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../../Apikeys/config";
 
 

@@ -1,4 +1,4 @@
-import { FormComposable, FormComposableField, FormComposableState, OrganizationRef, validators } from "@smartb/g2";
+import { FormComposable, FormComposableField, FormComposableState, OrganizationRef, validators } from "@komune-io/g2";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import { ApiKeyAddCommand } from "../../api";

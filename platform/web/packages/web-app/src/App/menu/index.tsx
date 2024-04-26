@@ -1,6 +1,6 @@
 import { Link, LinkProps } from "react-router-dom";
 import { useMemo } from "react";
-import { MenuItems } from '@smartb/g2-components'
+import { MenuItems } from '@komune-io/g2-components'
 import { useLocation } from "react-router";
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import BusinessIcon from '@mui/icons-material/Business';

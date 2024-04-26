@@ -1,5 +1,5 @@
 import { Address } from '../../Commons'
-import {city} from "@smartb/organization-domain"
+import {city} from "@komune-io/organization-domain"
 
 export const classes = `interface OrgCreationClasses {
   siretForm?: string

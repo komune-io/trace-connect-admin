@@ -1,5 +1,5 @@
 import { CssBaseline } from "@mui/material";
-import { ThemeContextProvider } from "@smartb/g2-themes";
+import { ThemeContextProvider } from "@komune-io/g2-themes";
 import "./default.css";
 
 export const parameters = {

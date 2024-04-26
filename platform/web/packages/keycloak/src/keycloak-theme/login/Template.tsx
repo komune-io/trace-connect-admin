@@ -4,7 +4,7 @@ import { type TemplateProps } from "keycloakify/login/TemplateProps";
 import type { KcContext } from "./kcContext";
 import type { I18n } from "./i18n";
 import { CssBaseline, Stack, Typography, styled} from '@mui/material'
-import { Alert, Section } from "@smartb/g2"
+import { Alert, Section } from "@komune-io/g2"
 import { TraceIcon } from "components"
 
 const Main = styled('main')(({ theme }) => ({

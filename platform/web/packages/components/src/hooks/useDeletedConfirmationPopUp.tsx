@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import React, { useCallback, useMemo, useState } from "react";
-import { Action, PopUp } from "@smartb/g2";
+import { Action, PopUp } from "@komune-io/g2";
 import { Typography } from "@mui/material";
 
 export interface UseDeletedConfirmationProps {

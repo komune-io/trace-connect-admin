@@ -1,6 +1,6 @@
 import { PageHeaderObject, useExtendedAuth } from "components"
 import { Typography } from '@mui/material'
-import { Page, Section } from '@smartb/g2'
+import { Page, Section } from '@komune-io/g2'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 import { OrganizationForm } from "./OrganizationForm";

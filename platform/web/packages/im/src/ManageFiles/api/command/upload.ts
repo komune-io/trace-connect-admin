@@ -1,4 +1,4 @@
-import {CommandParams, CommandWithFile, FilePath, useCommandWithFileRequest } from "@smartb/g2";
+import {CommandParams, CommandWithFile, FilePath, useCommandWithFileRequest } from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../../Apikeys/config";
 
 export interface MetaDataDTO {

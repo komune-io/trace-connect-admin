@@ -1,6 +1,6 @@
-import {QueryParams, useQueryRequest} from "@smartb/g2";
+import {QueryParams, useQueryRequest} from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../config";
-import { city } from "@smartb/apikey-domain"
+import { city } from "@komune-io/apikey-domain"
 
 export interface ApiKeyPageQuery extends city.smartb.im.apikey.domain.query.ApiKeyPageQueryDTO {}
 

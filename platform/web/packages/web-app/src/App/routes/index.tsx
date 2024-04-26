@@ -1,4 +1,4 @@
-import { NoMatchPage, Router } from "@smartb/g2";
+import { NoMatchPage, Router } from "@komune-io/g2";
 import { Route, useParams, useSearchParams } from "react-router-dom";
 import { Routes, useExtendedAuth } from "components";
 import { App } from "App";

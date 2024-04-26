@@ -4,7 +4,7 @@ import { type TemplateProps } from "keycloakify/login/TemplateProps";
 import type { KcContext } from "./kcContext";
 import type { I18n } from "./i18n";
 import { CssBaseline, Stack, styled, useMediaQuery, useTheme } from '@mui/material'
-import { Alert } from "@smartb/g2"
+import { Alert } from "@komune-io/g2"
 import bg from "./assets/traceLoginBackground.png"
 import { TraceIcon } from "components"
 

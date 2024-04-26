@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { StrictMode, lazy, Suspense } from "react";
 import { kcContext as kcLoginThemeContext } from "./keycloak-theme/login/kcContext";
 import { kcContext as kcAccountThemeContext } from "./keycloak-theme/account/kcContext";
-import { ThemeContextProvider, initI18next } from "@smartb/g2";
+import { ThemeContextProvider, initI18next } from "@komune-io/g2";
 import { theme } from "./Themes";
 import { I18nextProvider } from "react-i18next";
 

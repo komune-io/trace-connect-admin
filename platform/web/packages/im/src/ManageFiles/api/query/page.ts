@@ -1,4 +1,4 @@
-import { QueryParams, useQueryRequest } from "@smartb/g2"
+import { QueryParams, useQueryRequest } from "@komune-io/g2"
 import { useAuthenticatedRequest } from "../../../Apikeys/config"
 import { FileDTO } from "../model"
 

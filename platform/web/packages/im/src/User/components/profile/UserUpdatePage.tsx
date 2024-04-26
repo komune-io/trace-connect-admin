@@ -1,4 +1,4 @@
-import { Page, Section, } from '@smartb/g2';
+import { Page, Section, } from '@komune-io/g2';
 import { UserFactory } from 'connect-im';
 import { PageHeaderObject, useExtendedAuth } from "components";
 import { useTranslation } from 'react-i18next';

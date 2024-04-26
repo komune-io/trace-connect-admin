@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-import {FormComposable, FormComposableField, useFormComposable} from "@smartb/g2";
+import {FormComposable, FormComposableField, useFormComposable} from "@komune-io/g2";
 import {useMemo} from "react";
 import {useDeletedConfirmationPopUp} from "components";
 import {Stack, Typography} from "@mui/material";

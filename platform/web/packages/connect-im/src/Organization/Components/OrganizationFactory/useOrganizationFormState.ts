@@ -1,4 +1,4 @@
-import { i2Config, useAuth } from '@smartb/g2-providers'
+import { i2Config, useAuth } from '@komune-io/g2-providers'
 import { useCallback, useMemo } from 'react'
 import {
   FlatOrganization,
@@ -15,8 +15,8 @@ import {
   useOrganizationUploadLogo,
   useUpdateOrganization
 } from '../../Api'
-import { FormikFormParams, useFormComposable } from '@smartb/g2-composable'
-import { CommandOptions, CommandWithFile, QueryOptions } from '@smartb/g2-utils'
+import { FormikFormParams, useFormComposable } from '@komune-io/g2-composable'
+import { CommandOptions, CommandWithFile, QueryOptions } from '@komune-io/g2-utils'
 
 export interface useOrganizationFormStateProps<
   T extends Organization = Organization

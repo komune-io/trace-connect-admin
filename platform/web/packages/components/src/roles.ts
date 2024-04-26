@@ -1,5 +1,5 @@
-import { Option, QueryParams, i2Config, useQueryRequest } from "@smartb/g2"
-import { city } from "@smartb/privilege-domain"
+import { Option, QueryParams, i2Config, useQueryRequest } from "@komune-io/g2"
+import { city } from "@komune-io/privilege-domain"
 import { useMemo } from "react"
 import { useOidcAccessToken } from '@axa-fr/react-oidc'
 import { TFunction } from "i18next"

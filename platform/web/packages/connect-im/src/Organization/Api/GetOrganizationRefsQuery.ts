@@ -6,8 +6,8 @@ import {
   UseQueryOptions
 } from '@tanstack/react-query'
 import { OrganizationRef } from '../Domain'
-import { request } from '@smartb/g2-utils'
-import { i2Config } from '@smartb/g2-providers'
+import { request } from '@komune-io/g2-utils'
+import { i2Config } from '@komune-io/g2-providers'
 
 export interface OrganizationRefsAllQuery {}
 

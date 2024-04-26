@@ -1,5 +1,5 @@
 import { Organization } from '../../Domain'
-import { UseTableOptions, useTable, G2ColumnDef } from '@smartb/g2-layout'
+import { UseTableOptions, useTable, G2ColumnDef } from '@komune-io/g2-layout'
 import {
   useOrganizationColumns,
   useOrganizationColumnsParams

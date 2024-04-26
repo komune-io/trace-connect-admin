@@ -1,5 +1,5 @@
 import { getUserRolesFilterOptions, useCustomFilters } from 'components'
-import { Action, FilterComposableField } from '@smartb/g2'
+import { Action, FilterComposableField } from '@komune-io/g2'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { Box, BoxProps } from '@mui/material'
 import { AppButton } from './AppButton'
-import {Tooltip} from "@smartb/g2"
+import {Tooltip} from "@komune-io/g2"
 
 export interface SystemApp {
     href: string

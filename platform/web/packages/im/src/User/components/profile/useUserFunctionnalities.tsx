@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { usePolicies } from '../../../Policies/usePolicies';
-import { Action, i2Config, validators } from '@smartb/g2';
+import { Action, i2Config, validators } from '@komune-io/g2';
 
 interface UseUserFunctionnalitiesParams {
     organizationId?: string

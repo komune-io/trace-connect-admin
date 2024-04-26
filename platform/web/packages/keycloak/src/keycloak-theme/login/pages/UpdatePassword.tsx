@@ -2,7 +2,7 @@ import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../kcContext";
 import type { I18n } from "../i18n";
 import { useMemo, useCallback, type FormEventHandler, useState } from "react";
-import { FormComposableField, useFormComposable, FormComposable, Action, validators } from "@smartb/g2";
+import { FormComposableField, useFormComposable, FormComposable, Action, validators } from "@komune-io/g2";
 import { useTranslation } from "react-i18next";
 
 export default function UpdatePassword(props: PageProps<Extract<KcContext, { pageId: "login-update-password.ftl" }>, I18n>) {

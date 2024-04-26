@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react"
-import { insertObjectIdsInsideRoutes, RecordCamelCase } from "@smartb/g2"
+import { insertObjectIdsInsideRoutes, RecordCamelCase } from "@komune-io/g2"
 import {useExtendedAuth} from "./auth"
 import { Permissions } from "./roles"
 

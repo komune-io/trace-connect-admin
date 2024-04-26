@@ -1,4 +1,4 @@
-import {city} from "@smartb/user-domain"
+import {city} from "@komune-io/user-domain"
 
 export const classes = `export interface UserCreationClasses {
   leftForm?: string

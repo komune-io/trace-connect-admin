@@ -1,5 +1,5 @@
 import { Skeleton, Stack, Typography } from "@mui/material";
-import { Pagination } from "@smartb/g2";
+import { Pagination } from "@komune-io/g2";
 import { useRef } from "react";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
