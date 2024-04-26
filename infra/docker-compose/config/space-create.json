@@ -1,0 +1,6 @@
+{
+    "space": "${KC_REALM}",
+    "theme": "${KC_REALM_THEME}",
+    "locales": ["en", "fr"],
+    "adminUsers": []
+}
