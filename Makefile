@@ -51,7 +51,6 @@ docker-keycloak-build:
 		--build-arg VERSION_NODE=${VERSION_NODE} \
 		--build-arg VERSION_CONNECT=${VERSION_CONNECT} \
 		-f ${KEYCLOAK_DOCKERFILE} -t ${KEYCLOAK_IMG} .
-	@docker push ${KEYCLOAK_IMG}
 
 docker-keycloak-publish:
 	@docker tag ${KEYCLOAK_IMG} ghcr.io/komune-io/${KEYCLOAK_IMG}

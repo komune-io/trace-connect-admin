@@ -1,5 +1,5 @@
 import { Address } from '../../Commons'
-import {io} from "@komune-io/organization-domain"
+import {io} from "@komune-io/im-organization-domain"
 
 export const classes = `interface OrgCreationClasses {
   siretForm?: string

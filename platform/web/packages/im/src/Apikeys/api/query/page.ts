@@ -1,6 +1,6 @@
 import {QueryParams, useQueryRequest} from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../config";
-import { io } from "@komune-io/apikey-domain"
+import { io } from "@komune-io/im-apikey-domain"
 
 export interface ApiKeyPageQuery extends io.komune.im.apikey.domain.query.ApiKeyPageQueryDTO {}
 

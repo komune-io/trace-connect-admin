@@ -1,5 +1,5 @@
-import { Option, QueryParams, i2Config, useQueryRequest } from "@komune-io/g2"
-import { io } from "@komune-io/privilege-domain"
+import { Option, QueryParams, imConfig, useQueryRequest } from "@komune-io/g2"
+import { io } from "@komune-io/im-privilege-domain"
 import { useMemo } from "react"
 import { useOidcAccessToken } from '@axa-fr/react-oidc'
 import { TFunction } from "i18next"
@@ -18,7 +18,7 @@ export interface RoleListResult extends io.komune.im.f2.privilege.domain.role.qu
 export const useRoleListQuery = (params: QueryParams<RoleListQuery, RoleListResult>) => {
     const { accessToken } = useOidcAccessToken()
     const requestProps = useMemo(() => ({
-        url: i2Config().url,
+        url: imConfig().url,
         jwt: accessToken
     }), [accessToken])
     return useQueryRequest<RoleListQuery, RoleListResult>(
@@ -33,7 +33,7 @@ export interface PermissionListResult extends io.komune.im.f2.privilege.domain.p
 export const usePermissionListQuery = (params: QueryParams<PermissionListQuery, PermissionListResult>) => {
     const { accessToken } = useOidcAccessToken()
     const requestProps = useMemo(() => ({
-        url: i2Config().url,
+        url: imConfig().url,
         jwt: accessToken
     }), [accessToken])
     return useQueryRequest<PermissionListQuery, PermissionListResult>(

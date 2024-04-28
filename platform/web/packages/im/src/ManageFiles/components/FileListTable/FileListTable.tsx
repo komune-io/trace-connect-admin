@@ -32,7 +32,7 @@ const useFileListColumn = (props: UseFileListColumnProps) => {
             lastModification: generators.date({
                 header: t("lastModificationDate"),
                 getCellProps: (file) => ({
-                    date: file.lastModificationDate
+                    value: file.lastModificationDate
                 })
             }),
             size: generators.text({

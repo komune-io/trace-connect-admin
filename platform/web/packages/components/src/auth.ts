@@ -1,9 +1,9 @@
 import {useAuth, KeycloackService, AuthedUser} from "@komune-io/g2"
 import {Permissions, mutablePermissions, usePermissionListQuery, useRoleListQuery,} from "./roles";
 import { Routes, routesAuthorizations, RoutesRoles } from "./routes";
-import { io as apiKey } from "@komune-io/apikey-domain"
-import { io as organization } from "@komune-io/organization-domain"
-import { io as user } from "@komune-io/user-domain"
+import { io as apiKey } from "@komune-io/im-apikey-domain"
+import { io as organization } from "@komune-io/im-organization-domain"
+import { io as user } from "@komune-io/im-user-domain"
 
 type StaticServices = {
     hasUserRouteAuth: {

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { usePolicies } from '../../../Policies/usePolicies';
-import { Action, i2Config, validators } from '@komune-io/g2';
+import { Action, imConfig, validators } from '@komune-io/g2';
 
 interface UseUserFunctionnalitiesParams {
     organizationId?: string
@@ -81,7 +81,7 @@ export const useUserFunctionnalities = (params?: UseUserFunctionnalitiesParams) 
 
     const checkEmailValidity = useCallback(
         async (email: string) => {
-            return userExistsByEmail(email, i2Config().url, keycloak.token)
+            return userExistsByEmail(email, imConfig().url, keycloak.token)
         },
         [keycloak.token]
     )

@@ -1,5 +1,5 @@
 import { FormikFormParams, useFormComposable } from '@komune-io/g2-composable'
-import { i2Config, useAuth } from '@komune-io/g2-providers'
+import { imConfig, useAuth } from '@komune-io/g2-providers'
 import { useCallback, useMemo } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { OrganizationId } from '../../../Organization'
@@ -182,7 +182,7 @@ export const useUserFormState = <T extends User = User>(
 
   const checkEmailValidity = useCallback(
     async (email: string) => {
-      return userExistsByEmail(email, i2Config().url, keycloak.token)
+      return userExistsByEmail(email, imConfig().url, keycloak.token)
     },
     [keycloak.token]
   )

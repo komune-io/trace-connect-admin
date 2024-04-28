@@ -16,7 +16,6 @@ jobs:
       packages: write
     with:
       with-docker-registry-login: 'true'
-      docker-buildx-platform: linux/amd64,linux/arm64
     secrets:
       PKG_GITHUB_USERNAME: ${{ github.actor }}
       PKG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

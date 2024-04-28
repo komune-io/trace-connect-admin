@@ -46,8 +46,10 @@ export const useUserColumns = <T extends User = User>(
         id: 'givenName',
         cell: ({ row }) => (
           <TableCellProfile
-            familyName={row.original.familyName}
-            givenName={row.original.givenName}
+          value={{
+              familyName: row?.original?.familyName,
+              givenName: row?.original.givenName
+            }}
           />
         ),
         className: 'givenNameColumn'
@@ -78,8 +80,10 @@ export const useUserColumns = <T extends User = User>(
                 if (!!getOrganizationUrl && row.original.memberOf?.id) {
                   return (
                     <TableCellLink
-                      href={getOrganizationUrl(row.original.memberOf?.id)}
-                      label={row.original.memberOf?.name}
+                      value={{
+                        url: getOrganizationUrl(row.original.memberOf?.id),
+                        label: row.original.memberOf?.name
+                      }}
                     />
                   )
                 }

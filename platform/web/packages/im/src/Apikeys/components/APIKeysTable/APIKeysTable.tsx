@@ -48,7 +48,7 @@ function useAPIKeyColumn(onDeleteClick: (apiKey: ApiKeyDTO) => Promise<void>) {
             date: generators.date({
                 header: t("created"),
                 getCellProps: (apiKey) => ({
-                    date: apiKey.creationDate
+                    value:  apiKey.creationDate
                 })
             }),
             // @ts-ignore

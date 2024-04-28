@@ -1,6 +1,6 @@
 import {CommandParams, useCommandRequest} from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../config";
-import { io } from "@komune-io/apikey-domain"
+import { io } from "@komune-io/im-apikey-domain"
 
 export interface ApiKeyAddCommand extends io.komune.im.apikey.domain.command.ApiKeyOrganizationAddCommandDTO {}
 

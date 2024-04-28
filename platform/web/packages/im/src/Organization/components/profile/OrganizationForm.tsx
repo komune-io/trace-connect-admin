@@ -4,7 +4,7 @@ import { FormComposable, FormComposableField, FormComposableState, useTheme } fr
 import { useOrganizationFormFields } from "connect-im";
 import { getOptionsOfStatusValues, getOrgRolesOptions, useExtendedAuth } from "components";
 import { usePolicies } from "../../../Policies/usePolicies";
-import { io } from "@komune-io/organization-domain"
+import { io } from "@komune-io/im-organization-domain"
 
 export interface OrganizationFormProps {
     isLoading: boolean

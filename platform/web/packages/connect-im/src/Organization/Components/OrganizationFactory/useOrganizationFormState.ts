@@ -1,4 +1,4 @@
-import { i2Config, useAuth } from '@komune-io/g2-providers'
+import { imConfig, useAuth } from '@komune-io/g2-providers'
 import { useCallback, useMemo } from 'react'
 import {
   FlatOrganization,
@@ -224,7 +224,7 @@ export const useOrganizationFormState = <T extends Organization = Organization>(
 
   const getInseeOrganizationMemoized = useCallback(
     async (siret: string) => {
-      return getInseeOrganization(siret, i2Config().url, keycloak.token)
+      return getInseeOrganization(siret, imConfig().url, keycloak.token)
     },
     [keycloak.token]
   )

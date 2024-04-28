@@ -7,7 +7,7 @@ import {
 } from '@tanstack/react-query'
 import { OrganizationRef } from '../Domain'
 import { request } from '@komune-io/g2-utils'
-import { i2Config } from '@komune-io/g2-providers'
+import { imConfig } from '@komune-io/g2-providers'
 
 export interface OrganizationRefsAllQuery {}
 
@@ -67,7 +67,7 @@ export const usePrefetchOrganizationRefs = async (
 const fetchOrganizationRefs =
   (jwt?: string) => async (): Promise<OrganizationRefsAllResult> => {
     const res = await request<OrganizationRefsAllResult[]>({
-      url: `${i2Config().url}/organizationRefList`,
+      url: `${imConfig().url}/organizationRefList`,
       method: 'POST',
       body: '[{}]',
       jwt: jwt
