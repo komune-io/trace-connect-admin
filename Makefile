@@ -26,7 +26,7 @@ docker-web-lint:
 
 docker-web-build:
 	@docker build --no-cache=true \
-		--build-arg CI_NPM_AUTH_TOKEN=${CI_NPM_AUTH_TOKEN} \
+		--build-arg NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
 		--build-arg VERSION=${VERSION} \
 		--build-arg VERSION_NGINX=${VERSION_NGINX} \
 		--build-arg VERSION_NODE=${VERSION_NODE} \
@@ -46,7 +46,7 @@ docker-keycloak-lint:
 
 docker-keycloak-build:
 	@docker build --no-cache=true \
-		--build-arg CI_NPM_AUTH_TOKEN=${CI_NPM_AUTH_TOKEN} \
+		--build-arg NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
 		--build-arg VERSION=${VERSION} \
 		--build-arg VERSION_NODE=${VERSION_NODE} \
 		--build-arg VERSION_CONNECT=${VERSION_CONNECT} \

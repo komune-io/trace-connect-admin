@@ -128,12 +128,12 @@ export const useUserFormFields = <T extends User = User>(
         fieldsOverride?.familyName
       ),
       memberOf: mergeFields<FormComposableField<userFieldsName>>(
+         // @ts-ignore
         {
           name: 'memberOf',
           label: t('g2.memberOf'),
           type: 'select',
           params: {
-            //@ts-ignore
             getReadOnlyTextUrl: getOrganizationUrl
           }
         },
