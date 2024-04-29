@@ -19,7 +19,7 @@ RUN yarn install
 ENV PATH /app/node_modules/.bin:$PATH
 RUN yarn workspace keycloak build-keycloak-theme
 
-FROM komne/im-keycloak:${VERSION_CONNECT}
+FROM komune/im-keycloak:${VERSION_CONNECT}
 
 WORKDIR /app
 
