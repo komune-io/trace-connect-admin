@@ -15,6 +15,7 @@ jobs:
       contents: read
       packages: write
     with:
+      base-dir: platform/web
       with-docker-registry-login: 'true'
     secrets:
       NPM_PKG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
