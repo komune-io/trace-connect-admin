@@ -10,7 +10,7 @@ on:
 
 jobs:
   docker:
-    uses: komune-io/fixers-gradle/.github/workflows/make-nodejs-workflow.yml@79edc9c3671cac13add451b69e994976a192b657
+    uses: komune-io/fixers-gradle/.github/workflows/make-nodejs-workflow.yml@main
     permissions:
       contents: read
       packages: write
