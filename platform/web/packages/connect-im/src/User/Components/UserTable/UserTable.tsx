@@ -1,5 +1,5 @@
-import { TableV2Props, TableV2 } from '@smartb/g2-layout'
-import { BasicProps, MergeMuiElementProps } from '@smartb/g2-themes'
+import { TableV2Props, TableV2 } from '@komune-io/g2-layout'
+import { BasicProps, MergeMuiElementProps } from '@komune-io/g2-themes'
 import { User } from '../../Domain'
 import { Table as TableState } from '@tanstack/react-table'
 

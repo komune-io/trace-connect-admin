@@ -1,8 +1,8 @@
-import { Chip } from "@smartb/g2-components";
+import { Chip } from "@komune-io/g2-components";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { LinkProps, useNavigate } from "react-router-dom";
-import { G2ColumnDef } from "@smartb/g2-layout";
+import { G2ColumnDef } from "@komune-io/g2-layout";
 import { Row } from '@tanstack/react-table'
 import {
   useExtendedAuth,

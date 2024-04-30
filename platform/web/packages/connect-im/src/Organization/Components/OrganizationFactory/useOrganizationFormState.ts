@@ -1,4 +1,4 @@
-import { i2Config, useAuth } from '@smartb/g2-providers'
+import { imConfig, useAuth } from '@komune-io/g2-providers'
 import { useCallback, useMemo } from 'react'
 import {
   FlatOrganization,
@@ -15,8 +15,8 @@ import {
   useOrganizationUploadLogo,
   useUpdateOrganization
 } from '../../Api'
-import { FormikFormParams, useFormComposable } from '@smartb/g2-composable'
-import { CommandOptions, CommandWithFile, QueryOptions } from '@smartb/g2-utils'
+import { FormikFormParams, useFormComposable } from '@komune-io/g2-composable'
+import { CommandOptions, CommandWithFile, QueryOptions } from '@komune-io/g2-utils'
 
 export interface useOrganizationFormStateProps<
   T extends Organization = Organization
@@ -224,7 +224,7 @@ export const useOrganizationFormState = <T extends Organization = Organization>(
 
   const getInseeOrganizationMemoized = useCallback(
     async (siret: string) => {
-      return getInseeOrganization(siret, i2Config().url, keycloak.token)
+      return getInseeOrganization(siret, imConfig().url, keycloak.token)
     },
     [keycloak.token]
   )

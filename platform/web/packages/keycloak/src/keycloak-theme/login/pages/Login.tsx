@@ -3,7 +3,7 @@ import {useMemo, useCallback, useState, type FormEventHandler } from "react";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../kcContext";
 import type { I18n } from "../i18n";
-import { FormComposableField, useFormComposable, FormComposable, Action, Link, validators } from "@smartb/g2";
+import { FormComposableField, useFormComposable, FormComposable, Action, Link, validators } from "@komune-io/g2";
 import { useTranslation } from "react-i18next";
 import {Stack} from "@mui/material"
 

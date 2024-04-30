@@ -1,4 +1,4 @@
-import { Page, LinkButton } from "@smartb/g2"
+import { Page, LinkButton } from "@komune-io/g2"
 import { UserTable, useGetUsers, useUserTableState } from "connect-im"
 import { Typography } from "@mui/material";
 import { PageHeaderObject, useExtendedAuth, useRoutesDefinition } from "components";

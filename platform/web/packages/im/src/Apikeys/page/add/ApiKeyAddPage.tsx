@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { PageHeaderObject, useExtendedAuth } from "components";
 import { useCallback, useMemo } from "react";
-import { Action, Page, Section, useFormComposable, useGetOrganizationRefs } from "@smartb/g2";
+import { Action, Page, Section, useFormComposable, useGetOrganizationRefs } from "@komune-io/g2";
 import { Typography } from "@mui/material";
 import { useCreatedConfirmationPopUp } from "../../hooks";
 import { ApiKeyAddCommand, useApiKeyAddFunction } from "../../api/";

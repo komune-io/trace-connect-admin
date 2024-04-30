@@ -1,9 +1,9 @@
-import { useAuthenticatedRequest } from '@smartb/g2-providers'
+import { useAuthenticatedRequest } from '@komune-io/g2-providers'
 import { OrganizationId } from '../Domain'
 import {
   CommandParams,
   useCommandRequest
-} from '@smartb/g2-utils'
+} from '@komune-io/g2-utils'
 
 export interface OrganizationDisableCommand {
   id: OrganizationId

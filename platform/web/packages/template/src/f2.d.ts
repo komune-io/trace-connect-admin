@@ -144,7 +144,7 @@ export namespace f2.dsl.cqrs.page {
 
     }
 }
-export namespace city.smartb.im.commons.auth {
+export namespace io.komune.im.commons.auth {
     interface AuthedUserDTO {
         readonly id: string;
         readonly memberOf?: string;
@@ -152,7 +152,7 @@ export namespace city.smartb.im.commons.auth {
 
     }
 }
-export namespace city.smartb.im.commons.model {
+export namespace io.komune.im.commons.model {
     interface AddressDTO {
         readonly street: string;
         readonly postalCode: string;
@@ -160,7 +160,7 @@ export namespace city.smartb.im.commons.model {
 
     }
 }
-export namespace city.smartb.im.commons.http {
+export namespace io.komune.im.commons.http {
     class ClientJs {
         constructor();
         protected doCall<T>(fnc: any /*Suspend functions are not supported*/): Promise<T>;

@@ -5,9 +5,9 @@ import {
   TableCellLink,
   TableCellProfile,
   TableCellText
-} from '@smartb/g2-layout'
+} from '@komune-io/g2-layout'
 import { User } from '../../Domain'
-import { MenuItem, MoreOptions } from '@smartb/g2-components'
+import { MenuItem, MoreOptions } from '@komune-io/g2-components'
 import { OrganizationId } from '../../../Organization'
 
 export type userTableColumns = 'givenName' | 'address' | 'email' | 'memberOf'
@@ -46,8 +46,10 @@ export const useUserColumns = <T extends User = User>(
         id: 'givenName',
         cell: ({ row }) => (
           <TableCellProfile
-            familyName={row.original.familyName}
-            givenName={row.original.givenName}
+          value={{
+              familyName: row?.original?.familyName,
+              givenName: row?.original.givenName
+            }}
           />
         ),
         className: 'givenNameColumn'
@@ -78,8 +80,10 @@ export const useUserColumns = <T extends User = User>(
                 if (!!getOrganizationUrl && row.original.memberOf?.id) {
                   return (
                     <TableCellLink
-                      href={getOrganizationUrl(row.original.memberOf?.id)}
-                      label={row.original.memberOf?.name}
+                      value={{
+                        url: getOrganizationUrl(row.original.memberOf?.id),
+                        label: row.original.memberOf?.name
+                      }}
                     />
                   )
                 }

@@ -1,5 +1,5 @@
-import { FormikFormParams, useFormComposable } from '@smartb/g2-composable'
-import { i2Config, useAuth } from '@smartb/g2-providers'
+import { FormikFormParams, useFormComposable } from '@komune-io/g2-composable'
+import { imConfig, useAuth } from '@komune-io/g2-providers'
 import { useCallback, useMemo } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { OrganizationId } from '../../../Organization'
@@ -11,7 +11,7 @@ import {
   useUserUpdateEmail
 } from '../../Api'
 import { FlatUser, flatUserToUser, User, userToFlatUser, UserUpdatedEmailEvent, UserUpdateEmailCommand } from '../../Domain'
-import { CommandOptions, QueryOptions } from '@smartb/g2-utils'
+import { CommandOptions, QueryOptions } from '@komune-io/g2-utils'
 
 export interface UseUserFormStateProps<T extends User = User> {
   /**
@@ -182,7 +182,7 @@ export const useUserFormState = <T extends User = User>(
 
   const checkEmailValidity = useCallback(
     async (email: string) => {
-      return userExistsByEmail(email, i2Config().url, keycloak.token)
+      return userExistsByEmail(email, imConfig().url, keycloak.token)
     },
     [keycloak.token]
   )

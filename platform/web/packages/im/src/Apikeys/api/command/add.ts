@@ -1,10 +1,10 @@
-import {CommandParams, useCommandRequest} from "@smartb/g2";
+import {CommandParams, useCommandRequest} from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../config";
-import { city } from "@smartb/apikey-domain"
+import { io } from "@komune-io/im-apikey-domain"
 
-export interface ApiKeyAddCommand extends city.smartb.im.apikey.domain.command.ApiKeyOrganizationAddCommandDTO {}
+export interface ApiKeyAddCommand extends io.komune.im.apikey.domain.command.ApiKeyOrganizationAddCommandDTO {}
 
-export interface ApiKeyAddedEvent extends city.smartb.im.apikey.domain.command.ApiKeyAddedEventDTO {}
+export interface ApiKeyAddedEvent extends io.komune.im.apikey.domain.command.ApiKeyAddedEventDTO {}
 
 export type ApiKeyAddFunctionOptions = Omit<CommandParams<ApiKeyAddCommand, ApiKeyAddedEvent>,
     'jwt' | 'apiUrl'

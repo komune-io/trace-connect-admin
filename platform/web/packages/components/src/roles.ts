@@ -1,24 +1,24 @@
-import { Option, QueryParams, i2Config, useQueryRequest } from "@smartb/g2"
-import { city } from "@smartb/privilege-domain"
+import { Option, QueryParams, imConfig, useQueryRequest } from "@komune-io/g2"
+import { io } from "@komune-io/im-privilege-domain"
 import { useMemo } from "react"
 import { useOidcAccessToken } from '@axa-fr/react-oidc'
 import { TFunction } from "i18next"
 
 
-export interface Role extends city.smartb.im.f2.privilege.domain.role.model.RoleDTO { }
+export interface Role extends io.komune.im.f2.privilege.domain.role.model.RoleDTO { }
 
-export interface Permission extends city.smartb.im.f2.privilege.domain.permission.model.PermissionDTO { }
+export interface Permission extends io.komune.im.f2.privilege.domain.permission.model.PermissionDTO { }
 
-export const RoleTargetValues = city.smartb.im.f2.privilege.domain.role.model.RoleTargetValues
+export const RoleTargetValues = io.komune.im.f2.privilege.domain.role.model.RoleTargetValues
 
-export interface RoleListQuery extends city.smartb.im.f2.privilege.domain.role.query.RoleListQueryDTO { }
+export interface RoleListQuery extends io.komune.im.f2.privilege.domain.role.query.RoleListQueryDTO { }
 
-export interface RoleListResult extends city.smartb.im.f2.privilege.domain.role.query.RoleListResultDTO { }
+export interface RoleListResult extends io.komune.im.f2.privilege.domain.role.query.RoleListResultDTO { }
 
 export const useRoleListQuery = (params: QueryParams<RoleListQuery, RoleListResult>) => {
     const { accessToken } = useOidcAccessToken()
     const requestProps = useMemo(() => ({
-        url: i2Config().url,
+        url: imConfig().url,
         jwt: accessToken
     }), [accessToken])
     return useQueryRequest<RoleListQuery, RoleListResult>(
@@ -26,14 +26,14 @@ export const useRoleListQuery = (params: QueryParams<RoleListQuery, RoleListResu
     )
 }
 
-export interface PermissionListQuery extends city.smartb.im.f2.privilege.domain.permission.query.PermissionListQueryDTO { }
+export interface PermissionListQuery extends io.komune.im.f2.privilege.domain.permission.query.PermissionListQueryDTO { }
 
-export interface PermissionListResult extends city.smartb.im.f2.privilege.domain.permission.query.PermissionListResultDTO { }
+export interface PermissionListResult extends io.komune.im.f2.privilege.domain.permission.query.PermissionListResultDTO { }
 
 export const usePermissionListQuery = (params: QueryParams<PermissionListQuery, PermissionListResult>) => {
     const { accessToken } = useOidcAccessToken()
     const requestProps = useMemo(() => ({
-        url: i2Config().url,
+        url: imConfig().url,
         jwt: accessToken
     }), [accessToken])
     return useQueryRequest<PermissionListQuery, PermissionListResult>(

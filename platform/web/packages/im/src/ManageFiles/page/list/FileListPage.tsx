@@ -1,4 +1,4 @@
-import { Page, Section, Button, FormComposableField, FormComposable, useFormComposable } from "@smartb/g2";
+import { Page, Section, Button, FormComposableField, FormComposable, useFormComposable } from "@komune-io/g2";
 import { PageHeaderObject } from "components";
 import { useTranslation } from "react-i18next";
 import { FileListTable } from "../../components";

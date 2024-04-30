@@ -1,4 +1,4 @@
-FROM smartbcity/i2-keycloak:0.16.0
+FROM komne/im-keycloak:${VERSION_CONNECT}
 
 WORKDIR /app
 

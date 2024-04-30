@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material"
-import { ColumnFactory, useTable, } from "@smartb/g2"
+import { ColumnFactory, useTable, } from "@komune-io/g2"
 import { useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { OffsetPagination, OffsetTable, PageQueryResult } from "template"
@@ -32,7 +32,7 @@ const useFileListColumn = (props: UseFileListColumnProps) => {
             lastModification: generators.date({
                 header: t("lastModificationDate"),
                 getCellProps: (file) => ({
-                    date: file.lastModificationDate
+                    value: file.lastModificationDate
                 })
             }),
             size: generators.text({

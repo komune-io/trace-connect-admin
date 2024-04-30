@@ -5,7 +5,7 @@ import {
   AutomatedOrganizationTableBasicProps as AutomatedOrganizationTableProps
 } from './AutomatedOrganizationTable'
 
-import { g2Config, KeycloakProvider, useAuth } from '@smartb/g2-providers'
+import { g2Config, KeycloakProvider, useAuth } from '@komune-io/g2-providers'
 import { Typography } from '@mui/material'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Organization } from '../OrganizationFactory'

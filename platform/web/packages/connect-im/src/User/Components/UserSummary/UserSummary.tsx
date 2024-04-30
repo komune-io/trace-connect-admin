@@ -1,7 +1,7 @@
 import { Stack, StackProps, Typography } from '@mui/material'
-import { Chip, UserAvatar } from '@smartb/g2-components'
-import { Option } from '@smartb/g2-forms'
-import { BasicProps, MergeMuiElementProps } from '@smartb/g2-themes'
+import { Chip, UserAvatar } from '@komune-io/g2-components'
+import { Option } from '@komune-io/g2-forms'
+import { BasicProps, MergeMuiElementProps } from '@komune-io/g2-themes'
 import { useMemo } from 'react'
 
 export interface UserSummaryBasicProps extends BasicProps {

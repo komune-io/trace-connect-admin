@@ -1,4 +1,4 @@
-import { Option } from "@smartb/g2"
+import { Option } from "@komune-io/g2"
 //to remove when added in g2
 
 export interface GetOptionsOfStatusValuesParams {

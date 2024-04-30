@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   im-gateway:
-    image: smartbcity/im-gateway:${IM_VERSION}
+    image: komune/im-gateway:${VERSION_IM}
     container_name: im-gateway
     environment:
       - i2_issuers[0]_name=local

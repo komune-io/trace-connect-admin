@@ -1,16 +1,17 @@
-FROM node:16-alpine as build
+ARG VERSION_NODE
+ARG VERSION_CONNECT
+
+FROM node:${VERSION_NODE} as build
 
 WORKDIR /app
 
 COPY platform/web ./
 
-ARG CI_NPM_AUTH_TOKEN
-RUN echo -e "\
-access=public \n\
- @smartb:registry=https://gitlab.smartb.city/api/v4/projects/127/packages/npm/ \n\
-//gitlab.smartb.city/api/v4/projects/127/packages/npm/:_authToken=${CI_NPM_AUTH_TOKEN} \n\
-" > .npmrc
-
+ARG NPM_AUTH_TOKEN
+RUN printf "\
+@komune-io:registry=https://npm.pkg.github.com\n\
+//npm.pkg.github.com/:_authToken=%s\n\
+" "${NPM_AUTH_TOKEN}" > .npmrc
 
 ARG VERSION
 ENV REACT_APP_VERSION=$VERSION
@@ -18,7 +19,7 @@ RUN yarn install
 ENV PATH /app/node_modules/.bin:$PATH
 RUN yarn workspace keycloak build-keycloak-theme
 
-FROM smartbcity/i2-keycloak:0.16.0
+FROM komune/im-keycloak:${VERSION_CONNECT}
 
 WORKDIR /app
 

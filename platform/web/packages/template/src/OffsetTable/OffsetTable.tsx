@@ -1,4 +1,4 @@
-import { MergeMuiElementProps, TableV2, TableV2Props } from "@smartb/g2";
+import { MergeMuiElementProps, TableV2, TableV2Props } from "@komune-io/g2";
 import { OffsetPagination, PageQueryResult } from "./model";
 import { FixedPagination } from "./FixedPagination";
 

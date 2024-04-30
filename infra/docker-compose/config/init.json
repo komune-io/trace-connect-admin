@@ -1,0 +1,6 @@
+{
+    "imMasterClient": {
+        "clientId": "${KC_IM_CLIENT_ID}",
+        "clientSecret": "${KC_IM_CLIENT_SECRET}"
+    }
+}

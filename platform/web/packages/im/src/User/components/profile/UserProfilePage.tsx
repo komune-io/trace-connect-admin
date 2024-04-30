@@ -1,4 +1,4 @@
-import { Page, Section, LinkButton, Button } from '@smartb/g2';
+import { Page, Section, LinkButton, Button } from '@komune-io/g2';
 import { UserFactory, useUserDisable, User } from 'connect-im';
 import { LanguageSelector, PageHeaderObject, useExtendedAuth, useRoutesDefinition } from "components";
 import { useCallback, useMemo } from 'react'

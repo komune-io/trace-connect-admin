@@ -4,15 +4,15 @@ import {
   KeycloakProvider,
   g2Config,
   OidcSecure
-} from "@smartb/g2-providers";
-import { ThemeContextProvider } from "@smartb/g2-themes";
+} from "@komune-io/g2-providers";
+import { ThemeContextProvider } from "@komune-io/g2-themes";
 import { languages } from "components";
 import { theme } from "Themes";
 import { QueryClient } from "@tanstack/react-query"
 import { createRoot } from 'react-dom/client'
 import { AppRouter } from "App/routes";
 import { OidcConfiguration } from "@axa-fr/oidc-client";
-import { AlertHub } from "@smartb/g2";
+import { AlertHub } from "@komune-io/g2";
 
 const queryClient = new QueryClient({
   defaultOptions: {

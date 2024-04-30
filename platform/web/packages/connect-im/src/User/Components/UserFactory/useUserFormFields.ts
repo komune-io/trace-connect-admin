@@ -1,4 +1,4 @@
-import { FormComposableField } from '@smartb/g2-composable'
+import { FormComposableField } from '@komune-io/g2-composable'
 import { useCallback, useMemo, useState } from 'react'
 import {
   AdressFieldsName,
@@ -7,7 +7,7 @@ import {
 } from '../../../Commons'
 import { OrganizationId } from '../../../Organization'
 import { User } from '../../Domain'
-import { validators } from '@smartb/g2-utils'
+import { validators } from '@komune-io/g2-utils'
 import { useTranslation } from 'react-i18next'
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i
@@ -128,12 +128,12 @@ export const useUserFormFields = <T extends User = User>(
         fieldsOverride?.familyName
       ),
       memberOf: mergeFields<FormComposableField<userFieldsName>>(
+         // @ts-ignore
         {
           name: 'memberOf',
           label: t('g2.memberOf'),
           type: 'select',
           params: {
-            //@ts-ignore
             getReadOnlyTextUrl: getOrganizationUrl
           }
         },

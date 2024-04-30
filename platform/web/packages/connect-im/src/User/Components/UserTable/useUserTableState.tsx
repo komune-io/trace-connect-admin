@@ -1,4 +1,4 @@
-import { G2ColumnDef, UseTableOptions, useTable } from '@smartb/g2-layout'
+import { G2ColumnDef, UseTableOptions, useTable } from '@komune-io/g2-layout'
 import { User } from '../../Domain'
 import { useUserColumns, useUserColumnsParams } from './useUserColumns'
 

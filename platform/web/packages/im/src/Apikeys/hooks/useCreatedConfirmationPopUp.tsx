@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import React, { useCallback, useMemo, useState } from "react";
-import {Action, PopUp, TextField} from "@smartb/g2";
+import {Action, PopUp, TextField} from "@komune-io/g2";
 import {IconButton, Stack, Typography} from "@mui/material";
 import {VisibilityOffRounded, VisibilityRounded} from "@mui/icons-material";
 import {useRoutesDefinition} from "components";

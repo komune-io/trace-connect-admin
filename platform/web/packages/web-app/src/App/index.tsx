@@ -3,7 +3,7 @@ import { useMenu, useUserMenu } from "./menu";
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet } from "react-router-dom";
-import { StandAloneAppLayout } from "@smartb/g2";
+import { StandAloneAppLayout } from "@komune-io/g2";
 
 export const App = () => {
   const { t, i18n } = useTranslation()

@@ -1,6 +1,6 @@
 import {useTranslation} from "react-i18next";
 import {Stack, Typography} from "@mui/material";
-import {LinkButton, Page} from "@smartb/g2";
+import {LinkButton, Page} from "@komune-io/g2";
 import {useCallback, useMemo} from "react";
 import {Offset, OffsetPagination, PageQueryResult} from "template";
 import {PageHeaderObject, useExtendedAuth, useRoutesDefinition} from "components";

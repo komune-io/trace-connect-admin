@@ -1,6 +1,6 @@
 import { PageHeaderObject, useExtendedAuth, useRoutesDefinition } from "components"
 import { Typography } from '@mui/material'
-import {Page, Section, LinkButton, Button} from '@smartb/g2'
+import {Page, Section, LinkButton, Button} from '@komune-io/g2'
 import { Organization, useOrganizationDisable } from 'connect-im'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

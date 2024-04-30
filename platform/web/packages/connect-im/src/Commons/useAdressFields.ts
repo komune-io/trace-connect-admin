@@ -1,7 +1,7 @@
-import { FormComposableField } from '@smartb/g2-composable'
+import { FormComposableField } from '@komune-io/g2-composable'
 import { useMemo } from 'react'
 import { Address, mergeFields } from '.'
-import { validators } from '@smartb/g2-utils'
+import { validators } from '@komune-io/g2-utils'
 import { useTranslation } from 'react-i18next'
 
 export type AdressFieldsName = 'street' | 'postalCode' | 'city'

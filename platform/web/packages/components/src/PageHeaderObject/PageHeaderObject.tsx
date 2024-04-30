@@ -1,6 +1,6 @@
-import {HeaderProps} from "@smartb/g2-layout";
-import {StatusTag} from "@smartb/g2";
-import {StatusTagProps} from "@smartb/g2-notifications/dist/StatusTag/StatusTag";
+import {HeaderProps} from "@komune-io/g2-layout";
+import {StatusTag} from "@komune-io/g2";
+import {StatusTagProps} from "@komune-io/g2-notifications/dist/StatusTag/StatusTag";
 import { Skeleton, Typography, TypographyProps } from "@mui/material";
 
 export interface PageHeaderObjectProps {

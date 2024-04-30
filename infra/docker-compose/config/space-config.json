@@ -1,0 +1,144 @@
+{
+    "space": "${KC_REALM}",
+    "theme": "${KC_REALM_THEME}",
+    "appClients": [
+        {
+            "clientId": "${KC_APP_CLIENT_ID}",
+            "clientSecret": "${KC_APP_CLIENT_SECRET}",
+            "roles": [],
+            "realmManagementRoles": [
+                "manage-users",
+                "view-users",
+                "query-groups",
+                "manage-realm"
+            ]
+        }
+    ],
+    "webClients": [
+        {
+            "clientId": "${KC_WEB_CLIENT_ID}",
+            "webUrl": "http://localhost:5173"
+        }
+    ],
+    "permissions": [
+        {
+            "name": "tr_project_read",
+            "description": "Ability to view project data"
+        }, {
+            "name": "tr_project_write",
+            "description": "Ability to modify project data"
+        }
+    ],
+    "roles": [
+        {
+            "name": "tr_orchestrator",
+            "description": "Main organization role for orchestrators",
+            "targets": ["ORGANIZATION"],
+            "locale": {
+                "fr": "Orchestrateur",
+                "en": "Orchestrator"
+            },
+            "bindings": {
+                "USER": ["tr_orchestrator_user", "tr_orchestrator_admin"],
+                "API_KEY": ["tr_orchestrator_user", "tr_orchestrator_admin"]
+            }
+        },
+        {
+            "name": "tr_orchestrator_user",
+            "description": "Basic user role for orchestrator org",
+            "targets": ["USER", "API_KEY"],
+            "locale": {
+                "fr": "Utilisateur",
+                "en": "User"
+            },
+            "permissions": ["im_user_read", "tr_project_read"]
+        },
+        {
+            "name": "tr_orchestrator_admin",
+            "description": "Admin user role for orchestrator org",
+            "targets": ["USER", "API_KEY"],
+            "locale": {
+                "fr": "Administrateur",
+                "en": "Administrator"
+            },
+            "permissions": [
+                "im_organization_read", "im_organization_write",
+                "im_user_read", "im_user_write",
+                "im_role_read",  "im_role_write",
+                "im_apikey_read", "im_apikey_write",
+                "tr_project_read", "tr_project_write"
+            ]
+        }
+    ],
+    "organizations": [
+        {
+            "name": "Komune",
+            "siret": "50785916300119",
+            "description": "World owners",
+            "address": {
+                "street": "2 rue du Pavillon",
+                "postalCode": "34000",
+                "city": "Montpellier"
+            },
+            "roles": ["tr_orchestrator"],
+            "users": [{
+                "email": "connect@komune.io",
+                "password":  "traceconnect",
+                "firstname": "Admin",
+                "lastname":  "Admin",
+                "roles": ["tr_orchestrator_admin"],
+                "attributes": {
+                    "job": "Admin (I think)"
+                }
+            }, {
+                "email": "sandra@geffroi.com",
+                "password":  "traceconnect",
+                "firstname": "Sandra",
+                "lastname":  "Geffroi",
+                "roles": ["tr_orchestrator_admin"],
+                "attributes": {
+                    "job": "Frileuse"
+                }
+            }],
+            "apiKeys": [{
+                "name": "apikey",
+                "roles": ["tr_orchestrator_admin"]
+            }]
+        }, {
+            "name": "Monsstrai Company",
+            "description": "Your greatest fears working as one",
+            "address": {
+                "street": "123 rue Matysme",
+                "postalCode": "66666",
+                "city": "Ville Ainh"
+            },
+            "roles": [],
+            "users": [{
+                "email": "fred@ajance.com",
+                "password":  "traceconnect",
+                "firstname": "Fred",
+                "lastname":  "Ajance",
+                "roles": [],
+                "attributes": {
+                    "job": "Frais d'agence"
+                }
+            }, {
+                "email": "thibault@metyfeppeur.com",
+                "password":  "traceconnect",
+                "firstname": "Thibault",
+                "lastname":  "Métyfeppeur",
+                "roles": []
+            }, {
+                "email": "jess@croke.com",
+                "password":  "traceconnect",
+                "firstname": "Jess",
+                "lastname":  "Croke",
+                "roles": [],
+                "attribute": {
+                    "job": "Escroc"
+                }
+            }]
+        }
+    ],
+    "users": []
+}

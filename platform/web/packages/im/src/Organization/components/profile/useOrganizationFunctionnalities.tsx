@@ -1,4 +1,4 @@
-import { Action } from '@smartb/g2'
+import { Action } from '@komune-io/g2'
 import { useRoutesDefinition } from 'components'
 import { Organization, useOrganizationFormState } from 'connect-im'
 import { useCallback, useMemo } from 'react'

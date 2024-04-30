@@ -1,13 +1,13 @@
 import { useMemo } from 'react'
 import { Organization } from '../../Domain'
 import { useTranslation } from 'react-i18next'
-import { TableCellText, G2ColumnDef } from '@smartb/g2-layout'
+import { TableCellText, G2ColumnDef } from '@komune-io/g2-layout'
 import {
   Link,
   MenuItem,
   MoreOptions,
   Presentation
-} from '@smartb/g2-components'
+} from '@komune-io/g2-components'
 
 export type OrganizationTableColumns = 'name' | 'address' | 'website'
 

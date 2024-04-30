@@ -1,5 +1,5 @@
-import { Theme as AruiTheme} from "@smartb/g2-themes";
-import { DeepPartial } from "@smartb/g2";
+import { Theme as AruiTheme} from "@komune-io/g2-themes";
+import { DeepPartial } from "@komune-io/g2";
 
 export const theme: DeepPartial<AruiTheme> = {// to complete and to use
   colors: {

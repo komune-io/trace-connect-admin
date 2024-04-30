@@ -1,10 +1,10 @@
-import {QueryParams, useQueryRequest} from "@smartb/g2";
+import {QueryParams, useQueryRequest} from "@komune-io/g2";
 import {useAuthenticatedRequest} from "../../config";
-import { city } from "@smartb/apikey-domain"
+import { io } from "@komune-io/im-apikey-domain"
 
-export interface ApiKeyPageQuery extends city.smartb.im.apikey.domain.query.ApiKeyPageQueryDTO {}
+export interface ApiKeyPageQuery extends io.komune.im.apikey.domain.query.ApiKeyPageQueryDTO {}
 
-export interface ApiKeyPageResult extends city.smartb.im.apikey.domain.query.ApiKeyPageResultDTO {}
+export interface ApiKeyPageResult extends io.komune.im.apikey.domain.query.ApiKeyPageResultDTO {}
 
 export const useApiKeyPageQueryFunction = (params: QueryParams<ApiKeyPageQuery, ApiKeyPageResult>) => {
     const requestProps = useAuthenticatedRequest()

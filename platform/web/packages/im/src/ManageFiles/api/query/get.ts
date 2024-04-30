@@ -1,4 +1,4 @@
-import { QueryParams, useFetchBinary, useQueryRequest } from "@smartb/g2"
+import { QueryParams, useFetchBinary, useQueryRequest } from "@komune-io/g2"
 import { useAuthenticatedRequest } from "../../../Apikeys"
 import { FileDTO } from "../model"
 
