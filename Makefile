@@ -26,7 +26,7 @@ docker-web-lint:
 
 docker-web-build:
 	@docker build --no-cache=true \
-		--build-arg NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
+		--build-arg NPM_AUTH_TOKEN=${NPM_PKG_GITHUB_TOKEN} \
 		--build-arg VERSION=${VERSION} \
 		--build-arg VERSION_NGINX=${VERSION_NGINX} \
 		--build-arg VERSION_NODE=${VERSION_NODE} \
