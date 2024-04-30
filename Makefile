@@ -46,7 +46,7 @@ docker-keycloak-lint:
 
 docker-keycloak-build:
 	@docker build --no-cache=true \
-		--build-arg NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
+		--build-arg NPM_AUTH_TOKEN=${NPM_PKG_GITHUB_TOKEN} \
 		--build-arg VERSION=${VERSION} \
 		--build-arg VERSION_NODE=${VERSION_NODE} \
 		--build-arg VERSION_CONNECT=${VERSION_CONNECT} \
