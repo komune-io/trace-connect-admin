@@ -193,7 +193,7 @@ export const FileListPage = () => {
                 >
                 {name ? <PdfDisplayer file={pdfFileUrl} /> :
                     <FileListTable
-                        isLoading={fileListPageQuery.isLoading}
+                        isLoading={fileListPageQuery.isInitialLoading}
                         page={fileListPage}
                         pagination={pagination}
                         onRowClicked={onRowClicked}
