@@ -1,7 +1,7 @@
 import { useExtendedAuth } from "components";
 import { RequestProps } from "@komune-io/g2";
 import { useMemo } from "react";
-import { imConfig } from '@komune-io/g2-providers'
+import { imConfig } from '@komune-io/g2'
 import { fsConfig } from "@komune-io/g2";
 
 

@@ -1,4 +1,4 @@
-import { Theme as AruiTheme} from "@komune-io/g2-themes";
+import { Theme as AruiTheme} from "@komune-io/g2";
 import { DeepPartial } from "@komune-io/g2";
 import { PermanentHeader } from "components";
 

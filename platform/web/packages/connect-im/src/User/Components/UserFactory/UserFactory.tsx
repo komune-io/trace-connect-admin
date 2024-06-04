@@ -1,6 +1,6 @@
 import { cx } from '@emotion/css'
-import { Option } from '@komune-io/g2-forms'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2-themes'
+import { Option } from '@komune-io/g2'
+import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
 import React, { useMemo } from 'react'
 import { User } from '../../Domain'
 import { Stack, StackProps } from '@mui/material'
@@ -11,7 +11,7 @@ import {
   FormComposable,
   FormComposableField,
   FormComposableState
-} from '@komune-io/g2-composable'
+} from '@komune-io/g2'
 import {
   userFieldsName,
   useUserFormFields,

@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 import {
   AutomatedOrganizationTable,
   AutomatedOrganizationTableBasicProps as AutomatedOrganizationTableProps
 } from './AutomatedOrganizationTable'
 
-import { g2Config, KeycloakProvider, useAuth } from '@komune-io/g2-providers'
+import { g2Config, KeycloakProvider, useAuth } from '@komune-io/g2'
 import { Typography } from '@mui/material'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Organization } from '../OrganizationFactory'

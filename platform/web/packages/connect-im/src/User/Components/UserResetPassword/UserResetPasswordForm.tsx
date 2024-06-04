@@ -5,12 +5,12 @@ import {
   FormField,
   FormPartialField,
   useFormWithPartialFields
-} from '@komune-io/g2-forms'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2-themes'
+} from '@komune-io/g2'
+import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
 import React, { useCallback, useEffect, useMemo } from 'react'
 import { UserId, UserUpdatePasswordCommand } from '../../Domain'
 import { FormikHelpers } from 'formik'
-import { validators } from '@komune-io/g2-utils'
+import { validators } from '@komune-io/g2'
 import { useTranslation } from 'react-i18next'
 
 export type Validated = boolean

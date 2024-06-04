@@ -1,4 +1,4 @@
-import {HeaderProps} from "@komune-io/g2-layout";
+import {HeaderProps} from "@komune-io/g2";
 import {StatusTag} from "@komune-io/g2";
 import {StatusTagProps} from "@komune-io/g2-notifications/dist/StatusTag/StatusTag";
 import { Skeleton, Typography, TypographyProps } from "@mui/material";

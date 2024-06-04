@@ -5,7 +5,7 @@ import {Organization, useOrganizationDisable} from "connect-im";
 import {useCallback, useMemo} from "react";
 import {Row} from "@tanstack/react-table";
 import {useQueryClient} from "@tanstack/react-query";
-import {G2ColumnDef} from "@komune-io/g2-layout";
+import {G2ColumnDef} from "@komune-io/g2";
 import {useDeleteOrganizationPopUp} from "./useDeleteOrganizationPopUp";
 import { useOrganizationColumns } from "connect-im";
 import { Chip, InputForm, useTheme } from "@komune-io/g2";

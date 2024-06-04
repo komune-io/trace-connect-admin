@@ -1,7 +1,7 @@
 import { Box, InputLabel, Typography } from '@mui/material'
-import { Action, Link } from '@komune-io/g2-components'
-import { PopUp } from '@komune-io/g2-layout'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2-themes'
+import { Action, Link } from '@komune-io/g2'
+import { PopUp } from '@komune-io/g2'
+import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { useUserResetPassword } from '../../Api'
 import {

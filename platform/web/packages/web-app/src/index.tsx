@@ -4,8 +4,8 @@ import {
   KeycloakProvider,
   g2Config,
   OidcSecure
-} from "@komune-io/g2-providers";
-import { ThemeContextProvider } from "@komune-io/g2-themes";
+} from "@komune-io/g2";
+import { ThemeContextProvider } from "@komune-io/g2";
 import { languages } from "components";
 import { theme } from "Themes";
 import { QueryClient } from "@tanstack/react-query"

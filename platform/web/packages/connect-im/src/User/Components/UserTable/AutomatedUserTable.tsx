@@ -1,9 +1,9 @@
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2-themes'
+import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
 import { UserTable, UserTableProps } from './UserTable'
 import { useGetUsers } from '../../Api'
 import { User } from '../../Domain'
 import { useUserTableState, useUserTableStateParams } from './useUserTableState'
-import { QueryOptions } from '@komune-io/g2-utils'
+import { QueryOptions } from '@komune-io/g2'
 
 // TODO Automated should be without getUsers and organizationsRefs
 // we could use a parameter to disable organizationsRefs if needed

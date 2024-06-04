@@ -1,9 +1,9 @@
-import { useAuthenticatedRequest } from '@komune-io/g2-providers'
+import { useAuthenticatedRequest } from '@komune-io/g2'
 import { UserId } from '../Domain'
 import {
   CommandParams,
   useCommandRequest
-} from '@komune-io/g2-utils'
+} from '@komune-io/g2'
 
 export interface UserDisableCommand {
   id: UserId

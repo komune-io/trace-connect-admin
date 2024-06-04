@@ -1,4 +1,4 @@
-import { useI18n } from "@komune-io/g2-providers";
+import { useI18n } from "@komune-io/g2";
 
 export interface Languages {
   en: string;

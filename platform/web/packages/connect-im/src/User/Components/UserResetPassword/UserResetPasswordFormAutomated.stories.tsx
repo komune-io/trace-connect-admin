@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
-import { g2Config, KeycloakProvider } from '@komune-io/g2-providers'
+import { g2Config, KeycloakProvider } from '@komune-io/g2'
 import { Typography } from '@mui/material'
 import {
   UserResetPasswordFormAutomated,
