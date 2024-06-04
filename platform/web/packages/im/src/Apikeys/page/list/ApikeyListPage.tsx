@@ -66,7 +66,7 @@ export const ApikeyListPage = (props: APIKeysListPageProps) => {
                 <APIKeysTable
                     page={apiKeysPage}
                     pagination={pagination}
-                    isLoading={apiKeyPageQuery.isLoading}
+                    isLoading={apiKeyPageQuery.isInitialLoading}
                     onDeleteClick={onDelete}
                     onOffsetChange={setOffset}
                 />
