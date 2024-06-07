@@ -1,4 +1,5 @@
 {
   "extends": "../web-app/tsconfig.json",
+  "exclude": ["node_modules", "**/*.stories.tsx", "dist"],
   "include": ["src"]
 }
