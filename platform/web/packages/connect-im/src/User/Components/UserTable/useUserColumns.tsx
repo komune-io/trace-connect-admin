@@ -5,9 +5,9 @@ import {
   TableCellLink,
   TableCellProfile,
   TableCellText
-} from '@komune-io/g2-layout'
+} from '@komune-io/g2'
 import { User } from '../../Domain'
-import { MenuItem, MoreOptions } from '@komune-io/g2-components'
+import { MenuItem, MoreOptions } from '@komune-io/g2'
 import { OrganizationId } from '../../../Organization'
 
 export type userTableColumns = 'givenName' | 'address' | 'email' | 'memberOf'

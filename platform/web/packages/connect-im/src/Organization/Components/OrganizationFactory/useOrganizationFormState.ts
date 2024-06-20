@@ -1,4 +1,4 @@
-import { imConfig, useAuth } from '@komune-io/g2-providers'
+import { imConfig, useAuth } from '@komune-io/g2'
 import { useCallback, useMemo } from 'react'
 import {
   FlatOrganization,
@@ -15,8 +15,8 @@ import {
   useOrganizationUploadLogo,
   useUpdateOrganization
 } from '../../Api'
-import { FormikFormParams, useFormComposable } from '@komune-io/g2-composable'
-import { CommandOptions, CommandWithFile, QueryOptions } from '@komune-io/g2-utils'
+import { FormikFormParams, useFormComposable } from '@komune-io/g2'
+import { CommandOptions, CommandWithFile, QueryOptions } from '@komune-io/g2'
 
 export interface useOrganizationFormStateProps<
   T extends Organization = Organization

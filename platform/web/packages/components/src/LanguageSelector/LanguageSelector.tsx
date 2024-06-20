@@ -1,5 +1,5 @@
 import { Select, SelectChangeEvent } from '@mui/material'
-import { makeG2STyles } from '@komune-io/g2-themes'
+import { makeG2STyles } from '@komune-io/g2'
 import { useCallback } from 'react'
 import { useExtendedI18n, Languages, languages } from '../..'
 

@@ -2,8 +2,8 @@ import {
   Organization,
   OrganizationId,
 } from '../Domain'
-import { CommandParams, CommandWithFile, QueryParams, request, useCommandRequest, useCommandWithFileRequest, useQueryRequest } from '@komune-io/g2-utils'
-import { useAuthenticatedRequest } from '@komune-io/g2-providers'
+import { CommandParams, CommandWithFile, QueryParams, request, useCommandRequest, useCommandWithFileRequest, useQueryRequest } from '@komune-io/g2'
+import { useAuthenticatedRequest } from '@komune-io/g2'
 export * from './GetOrganizationRefsQuery'
 
 export const useGetOrganizations = <T extends Organization = Organization>(params: QueryParams<{id: OrganizationId}, {items: T[], total: number}>) => {

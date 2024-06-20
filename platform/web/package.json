@@ -35,7 +35,16 @@
     "react-router-dom": "^6.22.3",
     "@tanstack/react-query": "^5.28.6",
     "react-i18next": "^14.1.0",
-    "react-pdf": "^7.3.3"
+    "react-pdf": "^7.3.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@svgr/rollup": "^8.0.1",
+    "rollup": "^4.13.0",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0"
   },
   "workspaces": [
     "packages/*"

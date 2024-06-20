@@ -1,4 +1,4 @@
-import { PotentialError } from '@komune-io/g2-forms'
+import { PotentialError } from '@komune-io/g2'
 
 export const siretValidation = (
   value?: string,

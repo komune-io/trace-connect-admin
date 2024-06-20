@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { FormComposableField } from '@komune-io/g2-composable'
+import { FormComposableField } from '@komune-io/g2'
 
 export interface DeletableFormParams<
   T extends FormComposableField<string, {}> = FormComposableField<string, {}>

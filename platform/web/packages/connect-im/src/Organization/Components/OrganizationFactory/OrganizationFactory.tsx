@@ -1,8 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import { FormProps } from '@komune-io/g2-forms'
+import { FormProps } from '@komune-io/g2'
 import { styled, Typography } from '@mui/material'
-import { Popover } from '@komune-io/g2-notifications'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2-themes'
+import { BasicProps, MergeMuiElementProps, Popover } from '@komune-io/g2'
 import { cx } from '@emotion/css'
 import { Organization } from '../../Domain'
 import { useDeletableForm } from '../../../Commons/useDeletableForm'
@@ -10,7 +9,7 @@ import {
   FormComposable,
   FormComposableField,
   FormComposableState
-} from '@komune-io/g2-composable'
+} from '@komune-io/g2'
 import {
   organizationFieldsName,
   useOrganizationFormFields,

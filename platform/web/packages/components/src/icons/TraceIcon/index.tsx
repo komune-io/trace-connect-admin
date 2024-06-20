@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactComponent } from './icon.svg'
-import { MergeReactElementProps } from '@komune-io/g2-utils'
+import { MergeReactElementProps } from '@komune-io/g2'
 
 interface TraceIconProps {
   color?: string

@@ -1,5 +1,5 @@
-import { FormikFormParams, useFormComposable } from '@komune-io/g2-composable'
-import { imConfig, useAuth } from '@komune-io/g2-providers'
+import { FormikFormParams, useFormComposable } from '@komune-io/g2'
+import { imConfig, useAuth } from '@komune-io/g2'
 import { useCallback, useMemo } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { OrganizationId } from '../../../Organization'
@@ -11,7 +11,7 @@ import {
   useUserUpdateEmail
 } from '../../Api'
 import { FlatUser, flatUserToUser, User, userToFlatUser, UserUpdatedEmailEvent, UserUpdateEmailCommand } from '../../Domain'
-import { CommandOptions, QueryOptions } from '@komune-io/g2-utils'
+import { CommandOptions, QueryOptions } from '@komune-io/g2'
 
 export interface UseUserFormStateProps<T extends User = User> {
   /**
