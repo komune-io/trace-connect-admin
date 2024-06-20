@@ -21,14 +21,14 @@ const getGlobal = (localPackageJson) => {
     external: [...externalsDependencies, 'tslib'],
     output: [
       {
-        dir: './dist',
+        dir: '../komune-im/dist',
         globals: globals,
         format: 'cjs',
         sourcemap: true,
         entryFileNames: '[name].cjs'
       },
       {
-        dir: './dist',
+        dir: '../komune-im/dist',
         globals: globals,
         format: 'es',
         sourcemap: true,
