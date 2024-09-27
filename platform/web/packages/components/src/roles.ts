@@ -59,7 +59,24 @@ export const getUserRolesFilterOptions = (t: TFunction) => {
     return roles
 }
 
-export const getUserRolesOptions = (lang: string, orgRole?: Role, roles?: Role[]) => {
+export const getUserRolesOptions = (lang: string, roles?: Role[]) => {
+    if (!roles) return []
+    const options: Option[] = []
+    roles.forEach(role => {
+            if (role.targets.includes(RoleTargetValues.user())) {
+                options.push({
+                    key: role.identifier,
+                    label: role.locale[lang],
+                    color: getUserRoleColor(role.identifier)
+                })
+            }
+        }
+    )
+    return options
+}
+
+
+export const getUserOrganizationRolesOptions = (lang: string, orgRole?: Role, roles?: Role[]) => {
     if (!roles || !orgRole) return []
 
     const options: Option[] = []

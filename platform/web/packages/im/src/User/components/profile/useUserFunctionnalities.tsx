@@ -1,4 +1,4 @@
-import { getUserRolesOptions, useExtendedAuth, useRoutesDefinition } from 'components';
+import {getUserOrganizationRolesOptions, useExtendedAuth, useRoutesDefinition} from 'components';
 import { UserFactoryFieldsOverride, useGetOrganizationRefs, useUserFormState, userExistsByEmail } from 'connect-im';
 import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
@@ -49,7 +49,7 @@ export const useUserFunctionnalities = (params?: UseUserFunctionnalitiesParams) 
     const rolesOptions = useMemo(() => {
         const org = getOrganizationRefs.query.data?.items.find((org) => org.id === formState.values.memberOf)
         const orgRole = roles?.find((role: any) => role.identifier === org?.roles[0])
-        return getUserRolesOptions(i18n.language, orgRole, roles)
+        return getUserOrganizationRolesOptions(i18n.language, orgRole, roles)
     }, [i18n.language, t, getOrganizationRefs.query.data?.items, formState.values.memberOf, roles])
 
     const getOrganizationUrl = useCallback(
