@@ -29,10 +29,15 @@ export const useOrganizationFunctionnalities = (params?: useOrganizationFunction
     )
 
     const readOnlyAddress = useCallback(
-        (organization?: Organization) => ({ 
-            readOnlyAddress: organization?.address?.street !== "" ? `${organization?.address?.street}, ${organization?.address?.postalCode} ${organization?.address?.city}` : undefined,
-            status: organization?.status ?? OrgStatusValues.pending()
-        }),
+        (organization?: Organization) => {
+            const address = organization?.address?.street !== "" && organization?.address?.street != undefined  ?
+                `${organization?.address?.street ?? ''}, ${organization?.address?.postalCode ?? ''} ${organization?.address?.city ?? ''}`
+                : undefined
+            return ({
+                readOnlyAddress: address,
+                status: organization?.status ?? OrgStatusValues.pending()
+            })
+        },
         []
     );
 
