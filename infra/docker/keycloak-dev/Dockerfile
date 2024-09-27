@@ -1,4 +1,6 @@
-FROM komne/im-keycloak:${VERSION_CONNECT}
+ARG VERSION_CONNECT
+
+FROM komune/im-keycloak:${VERSION_CONNECT}
 
 WORKDIR /app
 

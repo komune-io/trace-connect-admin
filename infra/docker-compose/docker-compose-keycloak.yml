@@ -2,9 +2,10 @@ version: "3.7"
 
 services:
   keycloak-it:
-#    image: komune/connect-admin-keycloak:${CONNECT_ADMIN_KEYCLOAK_VERSION}
-    image: komune/im-keycloak:${VERSION_IM}
+#    image: connect-admin-keycloak:${CONNECT_ADMIN_KEYCLOAK_VERSION}
+    image: im-keycloak:0.18.0-SNAPSHOT
     container_name: ${KC_HOSTNAME}
+#    network_mode: host
     environment:
       KC_DB_URL: 'jdbc:postgresql://keycloak-postgres/keycloak-it'
       KC_DB_PASSWORD: admin
@@ -20,6 +21,9 @@ services:
       - '8080:8080'
     depends_on:
       - keycloak-postgres-it
+    networks:
+      - net
+
   keycloak-postgres-it:
     image: postgres
     container_name: keycloak-postgres
@@ -29,8 +33,10 @@ services:
       POSTGRES_PASSWORD: admin
     ports:
       - '5432:5432'
+    networks:
+      - net
 
 networks:
-  bclannet-it:
-    name: bclannet-it
+  net:
+    name: ${DOCKER_NETWORK}
     external: true

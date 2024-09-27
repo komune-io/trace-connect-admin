@@ -12,8 +12,10 @@ services:
       - i2_issuers[0]_im_clientSecret=secret
     ports:
       - "8009:8009"
+    networks:
+      - net
 
 networks:
-  bclannet-it:
-    name: bclannet-it
+  net:
+    name: ${DOCKER_NETWORK}
     external: true

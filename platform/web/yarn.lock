@@ -3565,16 +3565,21 @@
     "@komune-io/g2-themes" "0.6.0-alpha.8db9417"
     "@komune-io/g2-utils" "0.6.0-alpha.8db9417"
 
-"@komune-io/im-apikey-domain@^0.15.0-alpha.2ff4be0":
-  version "0.15.0-alpha.2ff4be0"
-  resolved "https://registry.npmjs.org/@komune-io/im-apikey-domain/-/im-apikey-domain-0.15.0-alpha.2ff4be0.tgz#0f841fcc1f3e49d76e744187a83b36f23b5da0e1"
-  integrity sha512-p/nEqcWPrqFmwh3J/6qaGEXbJaGh7KGTCxFvEhgHxVKqzNUhoFzS/CC0XQb3Dj8GUEsq8snP+oy52v62fjUTeQ==
+"@komune-io/im-apikey-domain@0.17.0":
+  version "0.17.0"
+  resolved "https://registry.npmjs.org/@komune-io/im-apikey-domain/-/im-apikey-domain-0.17.0.tgz#7db6201c043b8bc126e9629d687850659a8e76c8"
+  integrity sha512-y0g4/pcCNCWdDs32CcarY12gTHP0fY/EQ0skAk2Y3OinOrNkMIc3sBGlH+IVZQO7t2Z4hrN7EZo7niix2piPPg==
   dependencies:
     "@js-joda/core" "3.2.0"
-    abort-controller "3.0.0"
     format-util "^1.0.5"
-    node-fetch "2.6.7"
-    ws "8.5.0"
+
+"@komune-io/im-organization-domain@0.17.0":
+  version "0.17.0"
+  resolved "https://registry.npmjs.org/@komune-io/im-organization-domain/-/im-organization-domain-0.17.0.tgz#85c8abad77baa4df09d114b459bc7f916d924156"
+  integrity sha512-Iq4h3JX5aef59a8gIG/dy+AeDNyTnu/8O6Oo+3HaIOng16pAYce/6bVWImGsRRY4dVbxaEMjsAn8zZj4CKa3jw==
+  dependencies:
+    "@js-joda/core" "3.2.0"
+    format-util "^1.0.5"
 
 "@komune-io/im-organization-domain@^0.15.0-alpha.2ff4be0":
   version "0.15.0-alpha.2ff4be0"
@@ -3587,16 +3592,21 @@
     node-fetch "2.6.7"
     ws "8.5.0"
 
-"@komune-io/im-privilege-domain@^0.15.0-alpha.2ff4be0":
-  version "0.15.0-alpha.2ff4be0"
-  resolved "https://registry.npmjs.org/@komune-io/im-privilege-domain/-/im-privilege-domain-0.15.0-alpha.2ff4be0.tgz#f030a830c0b30837082d2645af1d6da2551d9415"
-  integrity sha512-/37eyfsJKScBOy19jIrWIPwHUNfBwT0F0mBrTVy1Y5p9TD/b0vaVoecRyq1kkNA7ZWPQbGoPZPik/By2Yay9TA==
+"@komune-io/im-privilege-domain@0.17.0":
+  version "0.17.0"
+  resolved "https://registry.npmjs.org/@komune-io/im-privilege-domain/-/im-privilege-domain-0.17.0.tgz#591c85d6cacca40bb7840dfb3c3ffb176258a878"
+  integrity sha512-Dhz/BFlh/W8JWGxhaFyQ3FvXoBiKuuVV23FRcKIc4RDZvhvMtRVR/oYi+uyXeOpLGSCqBkiBHHDjtpUfyDneGQ==
   dependencies:
     "@js-joda/core" "3.2.0"
-    abort-controller "3.0.0"
     format-util "^1.0.5"
-    node-fetch "2.6.7"
-    ws "8.5.0"
+
+"@komune-io/im-user-domain@0.17.0":
+  version "0.17.0"
+  resolved "https://registry.npmjs.org/@komune-io/im-user-domain/-/im-user-domain-0.17.0.tgz#2b288ac4e69975af887db2e0b056bc4cc51b38ec"
+  integrity sha512-gsaRwLpVbnHceZed7MYIFpS9ApLLp7NO+6AuBotupXzDForR8bISM5pvG3cAUoKN6yvLOSoBQUVl4/9cgR0JJA==
+  dependencies:
+    "@js-joda/core" "3.2.0"
+    format-util "^1.0.5"
 
 "@komune-io/im-user-domain@^0.15.0-alpha.2ff4be0":
   version "0.15.0-alpha.2ff4be0"
@@ -19731,7 +19741,16 @@ string-natural-compare@^3.0.1:
   resolved "https://registry.npmjs.org/string-natural-compare/-/string-natural-compare-3.0.1.tgz#7a42d58474454963759e8e8b7ae63d71c1e7fdf4"
   integrity sha512-n3sPwynL1nwKi3WJ6AIsClwBMa0zTi54fn2oLU6ndfTSIO05xaznjSf15PcBZU6FNWbmN5Q6cxT4V5hGvB4taw==
 
-"string-width-cjs@npm:string-width@^4.2.0", "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+"string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -19846,7 +19865,7 @@ stringify-object@^3.3.0:
     is-obj "^1.0.1"
     is-regexp "^1.0.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -19859,6 +19878,13 @@ strip-ansi@^3.0.1:
   integrity sha512-VhumSSbBqDTP8p2ZLKj40UjBCV4+v8bUSEpUb4KjRgWk9pbqGF4REFj6KEagidb2f/M6AzC0EmFyDNGaw9OCzg==
   dependencies:
     ansi-regex "^2.0.0"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
 
 strip-ansi@^7.0.1:
   version "7.1.0"
@@ -21923,7 +21949,16 @@ worker-rpc@^0.1.0:
   dependencies:
     microevent.ts "~0.1.1"
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
+wrap-ansi@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==

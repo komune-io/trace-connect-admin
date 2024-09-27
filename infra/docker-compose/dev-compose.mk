@@ -3,7 +3,7 @@ DOCKER_COMPOSE_FILE = keycloak smtp realm-init realm-config im
 DOCKER_COMPOSE_PATH = infra/docker-compose
 DOCKER_COMPOSE_ENV = $(DOCKER_COMPOSE_PATH)/.env_dev
 .PHONY: $(DOCKER_COMPOSE_FILE)
-ACTIONS = up down logs
+ACTIONS = up down logs pull
 
 dev:
 	$(eval ACTION := $(filter $(ACTIONS),$(MAKECMDGOALS)))
@@ -23,6 +23,8 @@ dev-service-action:
 		docker compose --env-file $(DOCKER_COMPOSE_ENV) -f $(DOCKER_COMPOSE_PATH)/docker-compose-$(SERVICE).yml down -v --remove-orphans; \
 	elif [ "$(ACTION)" = "logs" ]; then \
 		docker compose --env-file $(DOCKER_COMPOSE_ENV) -f $(DOCKER_COMPOSE_PATH)/docker-compose-$(SERVICE).yml logs -f; \
+	elif [ "$(ACTION)" = "pull" ]; then \
+		docker compose --env-file $(DOCKER_COMPOSE_ENV) -f $(DOCKER_COMPOSE_PATH)/docker-compose-$(SERVICE).yml pull; \
 	else \
 		echo 'No valid action: $(ACTION).'; \
 		echo 'Available actions are:'; \

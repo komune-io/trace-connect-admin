@@ -62,7 +62,7 @@ docker-keycloak-promote:
 
 # keycloak-dev
 docker-keycloak-dev:
-	@docker build --no-cache=true --progress=plain --build-arg VERSION=${VERSION} -f ${KEYCLOAK_DOCKERFILE_DEV} -t ${KEYCLOAK_IMG} .
+	@docker build --no-cache=true --progress=plain --build-arg VERSION_CONNECT=${VERSION} --build-arg VERSION=${VERSION} -f ${KEYCLOAK_DOCKERFILE_DEV} -t ${KEYCLOAK_IMG} .
 
 
 ## DEV ENVIRONMENT
