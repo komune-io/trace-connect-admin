@@ -1,0 +1,24 @@
+name: Dev
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 1.0.0)'
+        required: true
+      next_version:
+        description: 'Next development version (e.g., 1.0.1-dev)'
+        required: true
+
+jobs:
+  docker:
+    uses: komune-io/fixers-gradle/.github/workflows/release-workflow.yml@main
+    permissions:
+      contents: read
+      packages: write
+    with:
+      inputs: ${github.event.inputs.version}
+      pull_request: ${github.event.inputs.next_version}
+    secrets:
+      NPM_PKG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
