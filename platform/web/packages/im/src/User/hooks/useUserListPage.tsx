@@ -66,7 +66,6 @@ export const useUserListPage = () => {
         header: t("role"),
         id: "roles",
         cell: ({row}) => {
-          //@ts-ignore
           return <InputForm inputType="select" value={(row.original.roles ?? [])[0]?.identifier} readOnly readOnlyType="chip" options={getUserRolesOptions(i18n.language, roles)} />
         },
       },

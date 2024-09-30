@@ -53,7 +53,6 @@ export const useOrganizationListPage = () => {
                 header: t("role"),
                 id: "roles",
                 cell: ({row}) => {
-                    //@ts-ignore
                     return <InputForm inputType="select" value={(row.original.roles ?? [])[0]?.identifier} readOnly readOnlyType="chip" options={getOrgRolesOptions(i18n.language, roles)} />
                 },
             },
@@ -62,7 +61,6 @@ export const useOrganizationListPage = () => {
                 header: t("status"),
                 id: "status",
                 cell: ({row}) => {
-                    //@ts-ignore
                     const status = row.original.status
                     if (!status) return <></>
                     return <Chip
