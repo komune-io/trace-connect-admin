@@ -1,8 +1,15 @@
+### Config ###
+**/env-config.js
+**/OidcTrustedDomains.dev.js
+
+### Gradle ###
 .gradle
 **/build/
 !gradle/wrapper/gradle-wrapper.jar
 .env
 gradle.properties
+
+### Storybook ###
 storybook-static
 
 ### STS ###
