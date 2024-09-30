@@ -25,7 +25,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.15.14",
-    "@komune-io/g2": "^0.6.0-alpha.8db9417",
+    "@komune-io/g2": "0.6.0",
     "@komune-io/im-apikey-domain": "0.17.0",
     "@komune-io/im-organization-domain": "0.17.0",
     "@komune-io/im-privilege-domain": "0.17.0",
