@@ -1,9 +1,7 @@
-version: "3.7"
-
 services:
   im-gateway:
-    image: komune/im-gateway:${VERSION_IM}
-    container_name: im-gateway
+    image: ${DOCKER_REPOSITORY}im-gateway:${VERSION_IM}
+    container_name: ${DOCKER_CONTAINER_PREFIX}-im
     environment:
       - i2_issuers[0]_name=local
       - i2_issuers[0]_authUrl=${AUTH_HOST_URL}

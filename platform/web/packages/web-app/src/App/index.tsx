@@ -16,7 +16,7 @@ export const App = () => {
     i18n.language.includes("fr") ? i18n.changeLanguage("fr") : i18n.changeLanguage("en")
   }, [i18n.language])
 
-  const role = useMemo(() => roles?.find((role) => role.targets.includes(RoleTargetValues.user()) && user?.roles.includes(role.identifier)), [roles, user?.roles[0]])
+  const role = useMemo(() => roles?.find((role) => role.targets.includes(RoleTargetValues.user()) && user?.roles.includes(role.identifier)), [roles, user?.roles])
 
   return (
     <StandAloneAppLayout

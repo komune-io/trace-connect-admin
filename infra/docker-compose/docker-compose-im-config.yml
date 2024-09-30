@@ -1,0 +1,20 @@
+services:
+  im-config:
+    image: ${DOCKER_REPOSITORY}im-script:${VERSION_IM}
+    container_name: ${DOCKER_CONTAINER_PREFIX}-im-config
+    environment:
+      - im_script_space_auth_serverUrl=${AUTH_HOST_URL}
+      - im_script_space_auth_clientId=${KC_IM_CLIENT_ID}
+      - im_script_space_auth_clientSecret=${KC_IM_CLIENT_SECRET}
+      - im_script_space_jsonCreate=file:/tmp/im-create.json
+      - im_script_space_jsonConfig=file:/tmp/im-config.json
+    volumes:
+      - ./config/build/im-create.json:/tmp/im-create.json
+      - ./config/build/im-config.json:/tmp/im-config.json
+    networks:
+      - net
+
+networks:
+  net:
+    name: ${DOCKER_NETWORK}
+    external: true

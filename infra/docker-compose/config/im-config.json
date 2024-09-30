@@ -5,13 +5,7 @@
         {
             "clientId": "${KC_APP_CLIENT_ID}",
             "clientSecret": "${KC_APP_CLIENT_SECRET}",
-            "roles": [],
-            "realmManagementRoles": [
-                "manage-users",
-                "view-users",
-                "query-groups",
-                "manage-realm"
-            ]
+            "roles": ["tr_orchestrator_admin"]
         }
     ],
     "webClients": [
@@ -20,7 +14,16 @@
             "webUrl": "http://localhost:5173"
         }
     ],
-    "permissions": [
+    "permissions": [{
+            "name": "fs_file_write",
+            "description": "Ability to write file in fs"
+        }, {
+            "name": "fs_file_read",
+            "description": "Ability to read file in fs"
+        }, {
+            "name": "fs_policy_write",
+            "description": "Ability to write policy in fs"
+        },
         {
             "name": "tr_project_read",
             "description": "Ability to view project data"
@@ -51,7 +54,7 @@
                 "fr": "Utilisateur",
                 "en": "User"
             },
-            "permissions": ["im_user_read", "tr_project_read"]
+            "permissions": ["im_user_read", "tr_project_read", "fs_file_read"]
         },
         {
             "name": "tr_orchestrator_admin",
@@ -66,6 +69,7 @@
                 "im_user_read", "im_user_write",
                 "im_role_read",  "im_role_write",
                 "im_apikey_read", "im_apikey_write",
+                "fs_file_write", "fs_file_read", "fs_policy_write",
                 "tr_project_read", "tr_project_write"
             ]
         }

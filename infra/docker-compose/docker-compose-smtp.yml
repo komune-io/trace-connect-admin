@@ -1,9 +1,7 @@
-version: "3.7"
-
 services:
   connect-fake-smtp:
-    container_name: connect-fake-smtp
     image: reachfive/fake-smtp-server:latest
+    container_name: ${DOCKER_CONTAINER_PREFIX}-connect-fake-smtp
     ports:
       - "1025:1025"
       - "1080:1080"

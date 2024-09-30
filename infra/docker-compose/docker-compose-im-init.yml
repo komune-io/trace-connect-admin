@@ -1,15 +1,14 @@
-version: "3.7"
 services:
   im-init:
-    image: ghcr.io/komune-io/im-script:${VERSION_IM}
-    container_name: im-init
+    image: ${DOCKER_REPOSITORY}im-script:${VERSION_IM}
+    container_name: ${DOCKER_CONTAINER_PREFIX}-im-init
     environment:
       - im_script_init_auth_serverUrl=${AUTH_HOST_URL}
       - im_script_init_auth_username=${KC_ROOT_USER}
       - im_script_init_auth_password=${KC_ROOT_PASS}
-      - im_script_init_json=file:/tmp/init.json
+      - im_script_init_json=file:/tmp/im-init.json
     volumes:
-      - ./config/build/init.json:/tmp/init.json
+      - ./config/build/im-init.json:/tmp/im-init.json
     networks:
       - net
 

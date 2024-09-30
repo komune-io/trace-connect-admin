@@ -4,11 +4,11 @@ window._env_ = {
       url: "http://localhost:8009",
     },
     fs: {
-      url: "http://localhost:8091",
+      url: "http://localhost:8090",
     },
     keycloak: {
       realm: "im-test",
-      clientId: "im-test-web",
+      clientId: "connect-admin-web",
       url: "http://keycloak-it:8080"
     }
   }
