@@ -19,8 +19,8 @@ jobs:
       contents: read
       packages: write
     with:
-      version: ${inputs.version}
-      next_version: ${inputs.next_version}
+      version: ${{ github.event.inputs.version }}
+      next_version: ${{ github.event.inputs.next_version }}
     secrets:
       PKG_GITHUB_TOKEN: ${{ secrets.PKG_GITHUB_TOKEN }}
 
