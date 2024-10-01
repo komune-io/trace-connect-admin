@@ -8,6 +8,6 @@ export const theme: DeepPartial<AruiTheme> = {// to complete and to use
     secondary: "#353945",
     background: "#FAF8F3"
   },
-  permanentHeader: PermanentHeader as React.ElementType<any>,
+  permanentHeader: PermanentHeader,
   logoUrl: "/connect.png"
 };

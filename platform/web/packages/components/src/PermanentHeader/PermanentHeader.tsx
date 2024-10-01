@@ -2,12 +2,14 @@ import { Box, IconButton } from "@mui/material"
 import { Link } from "react-router-dom"
 import { TraceIcon } from "../icons";
 import { Menu } from "@mui/icons-material";
+import { ElementType } from "react";
+import { ThemePermanentHeaderProps } from "@komune-io/g2";
 
-export interface PermanentHeaderProps {
+export interface PermanentHeaderProps extends ThemePermanentHeaderProps {
     toggleOpenDrawer: () => void
 }
 
-export const PermanentHeader = (props: PermanentHeaderProps) => {
+export const PermanentHeader: ElementType<PermanentHeaderProps> = (props: PermanentHeaderProps) => {
     const {toggleOpenDrawer} = props
     return (
         <Box
