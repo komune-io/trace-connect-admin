@@ -9,16 +9,33 @@ on:
       - 'release/*'
 
 jobs:
+#  docker:
+#    uses: komune-io/fixers-gradle/.github/workflows/make-nodejs-workflow.yml@main
+#    permissions:
+#      contents: read
+#      packages: write
+#    with:
+#      base-dir: platform/web
+#      with-docker-registry-login: 'true'
+#    secrets:
+#      NPM_PKG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      DOCKER_PUBLISH_USERNAME: ${{ github.actor }}
+#      DOCKER_PUBLISH_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+#      DOCKER_PROMOTE_USERNAME: ${{ secrets.DOCKER_IO_USERNAME }}
+#      DOCKER_PROMOTE_PASSWORD: ${{ secrets.DOCKER_IO_PASSWORD }}
+
   docker:
-    uses: komune-io/fixers-gradle/.github/workflows/make-nodejs-workflow.yml@main
+    uses: komune-io/fixers-gradle/.github/workflows/make-jvm-workflow.yml@main
     permissions:
       contents: read
       packages: write
     with:
-      base-dir: platform/web
+      make-file: 'Makefile'
+      on-tag: 'publish promote'
       with-docker-registry-login: 'true'
     secrets:
-      NPM_PKG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PKG_GITHUB_USERNAME: ${{ github.actor }}
+      PKG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       DOCKER_PUBLISH_USERNAME: ${{ github.actor }}
       DOCKER_PUBLISH_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
       DOCKER_PROMOTE_USERNAME: ${{ secrets.DOCKER_IO_USERNAME }}
