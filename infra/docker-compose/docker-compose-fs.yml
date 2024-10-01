@@ -20,7 +20,7 @@ services:
     image: ${DOCKER_REPOSITORY}fs-gateway:${VERSION_FS}
     container_name: ${DOCKER_CONTAINER_PREFIX}-fs
     environment:
-      - fs_s3_internal-url=http://${MINIO_HOSTNAME}:9000
+      - fs_s3_internal-url=http://minio:9000
       - fs_s3_external-url=http://localhost:9000
       - fs_s3_bucket=consulting
       - fs_s3_username=${MINIO_ROOT_USER}

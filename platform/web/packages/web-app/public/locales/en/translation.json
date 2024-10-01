@@ -46,24 +46,6 @@
   "status": "Status",
   "files": "Files",
   "home": "Home",
-  "roles": {
-    "super_admin": "Super Admin",
-    "admin": "Admin",
-    "user": "User",
-    "tr_orchestrator_admin": "Admin",
-    "tr_orchestrator_user": "User",
-    "tr_project_manager_admin": "Admin",
-    "tr_project_manager_user": "User",
-    "tr_stakeholder_admin": "Admin",
-    "tr_stakeholder_user": "User"
-  },
-  "organizationRoles": {
-    "admin": "Admin",
-    "super_admin": "Super Admin",
-    "tr_project_manager": "Project Manager",
-    "tr_stakeholder": "Stakeholder",
-    "tr_orchestrator": "Orchestrator"
-  },
   "organizationStatus": {
     "VALIDATED": "Validated",
     "PENDING": "Pending verification",

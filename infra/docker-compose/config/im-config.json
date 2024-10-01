@@ -5,7 +5,7 @@
         {
             "clientId": "${KC_APP_CLIENT_ID}",
             "clientSecret": "${KC_APP_CLIENT_SECRET}",
-            "roles": ["tr_orchestrator_admin"]
+            "roles": ["admin", "tr_orchestrator"]
         }
     ],
     "webClients": [
@@ -42,12 +42,31 @@
                 "en": "Orchestrator"
             },
             "bindings": {
-                "USER": ["tr_orchestrator_user", "tr_orchestrator_admin"],
-                "API_KEY": ["tr_orchestrator_user", "tr_orchestrator_admin"]
-            }
+                "USER": ["user", "admin"],
+                "API_KEY": ["user", "admin"]
+            },
+            "permissions": [
+                "feat_im_all", "feat_im_own"
+            ]
         },
         {
-            "name": "tr_orchestrator_user",
+            "name": "tr_editor",
+            "description": "Main organization role for orchestrators",
+            "targets": ["ORGANIZATION"],
+            "locale": {
+                "fr": "Editeur",
+                "en": "Editor"
+            },
+            "bindings": {
+                "USER": ["user"],
+                "API_KEY": ["user"]
+            },
+            "permissions": [
+                "feat_im_own"
+            ]
+        },
+        {
+            "name": "user",
             "description": "Basic user role for orchestrator org",
             "targets": ["USER", "API_KEY"],
             "locale": {
@@ -57,7 +76,7 @@
             "permissions": ["im_user_read", "tr_project_read", "fs_file_read"]
         },
         {
-            "name": "tr_orchestrator_admin",
+            "name": "admin",
             "description": "Admin user role for orchestrator org",
             "targets": ["USER", "API_KEY"],
             "locale": {
@@ -90,7 +109,7 @@
                 "password":  "traceconnect",
                 "firstname": "Admin",
                 "lastname":  "Admin",
-                "roles": ["tr_orchestrator_admin"],
+                "roles": ["admin"],
                 "attributes": {
                     "job": "Admin (I think)"
                 }
@@ -99,30 +118,30 @@
                 "password":  "traceconnect",
                 "firstname": "Sandra",
                 "lastname":  "Geffroi",
-                "roles": ["tr_orchestrator_admin"],
+                "roles": ["user"],
                 "attributes": {
                     "job": "Frileuse"
                 }
             }],
             "apiKeys": [{
                 "name": "apikey",
-                "roles": ["tr_orchestrator_admin"]
+                "roles": ["admin"]
             }]
         }, {
             "name": "Monsstrai Company",
+            "roles": ["tr_editor"],
             "description": "Your greatest fears working as one",
             "address": {
                 "street": "123 rue Matysme",
                 "postalCode": "66666",
                 "city": "Ville Ainh"
             },
-            "roles": [],
             "users": [{
                 "email": "fred@ajance.com",
                 "password":  "traceconnect",
                 "firstname": "Fred",
                 "lastname":  "Ajance",
-                "roles": [],
+                "roles": ["admin"],
                 "attributes": {
                     "job": "Frais d'agence"
                 }
@@ -131,7 +150,7 @@
                 "password":  "traceconnect",
                 "firstname": "Thibault",
                 "lastname":  "Métyfeppeur",
-                "roles": []
+                "roles": ["user"]
             }, {
                 "email": "jess@croke.com",
                 "password":  "traceconnect",

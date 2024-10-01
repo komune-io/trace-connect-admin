@@ -40,24 +40,6 @@
   "closeOrganization": "Fermer l'organisation",
   "status": "Status",
   "home": "Home",
-  "roles": {
-    "super_admin": "Administrateur global",
-    "admin": "Admin",
-    "user": "Utilisateur",
-    "tr_orchestrator_admin": "Admin",
-    "tr_orchestrator_user": "Utilisateur",
-    "tr_project_manager_admin": "Admin",
-    "tr_project_manager_user": "Utilisateur",
-    "tr_stakeholder_admin": "Admin",
-    "tr_stakeholder_user": "Utilisateur"
-  },
-  "organizationRoles": {
-    "admin": "Admin",
-    "super_admin": "Super admin",
-    "tr_project_manager": "Chef de projet",
-    "tr_stakeholder": "Partie prenante",
-    "tr_orchestrator": "Orchestrateur"
-  },
   "organizationStatus": {
     "VALIDATED": "Validé",
     "PENDING": "En attente de vérification",
