@@ -20,23 +20,25 @@ export const App = () => {
 
   return (
     <StandAloneAppLayout
-    drawerProps={{
-      sx: {
-        "& .MuiListItemButton-root.Mui-selected": {
-          background: "none",
-          color: "primary.main"
-        },
-        "& .MuiListItemButton-root.Mui-selected .MuiListItemIcon-root": {
-          color: "primary.main"
-        },
-        "& .MuiListItemButton-root": {
-          color: "secondary.main"
-        },
-        "& .MuiListItemButton-root .MuiListItemIcon-root": {
-          color: "secondary.main"
+      defaultOpenButton={false}
+      defaultCloseButton={false}
+      drawerProps={{
+        sx: {
+          "& .MuiListItemButton-root.Mui-selected": {
+            background: "none",
+            color: "primary.main"
+          },
+          "& .MuiListItemButton-root.Mui-selected .MuiListItemIcon-root": {
+            color: "primary.main"
+          },
+          "& .MuiListItemButton-root": {
+            color: "secondary.main"
+          },
+          "& .MuiListItemButton-root .MuiListItemIcon-root": {
+            color: "secondary.main"
+          }
         }
-      }
-    }}
+      }}
       menu={menu}
       userMenuProps={{
         currentUser: user ? {
