@@ -22,5 +22,5 @@ jobs:
       version: ${github.event.inputs.version}
       next_version: ${github.event.inputs.next_version}
     secrets:
-      NPM_PKG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PKG_GITHUB_TOKEN: ${{ secrets.PKG_GITHUB_TOKEN }}
 
