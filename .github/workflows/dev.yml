@@ -1,12 +1,16 @@
 name: Dev
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, synchronize, labeled]
   push:
     branches:
       - main
       - 'release/*'
+    tags:
+      - '*'
+
 
 jobs:
   docker:
