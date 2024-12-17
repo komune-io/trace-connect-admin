@@ -5,7 +5,7 @@ import type { KcContext } from "./kcContext";
 import type { I18n } from "./i18n";
 import { CssBaseline, Stack, Typography, styled} from '@mui/material'
 import { Alert, Section } from "@komune-io/g2"
-import { TraceIcon } from "components"
+// import { TraceIcon } from "components"
 
 const Main = styled('main')(({ theme }) => ({
     flexGrow: 1,
@@ -62,7 +62,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     flexContent
 
                 >
-                    <TraceIcon style={{ height: "60px", alignSelf: "center" }} />
+                    {/* <TraceIcon style={{ height: "60px", alignSelf: "center" }} /> */}
                     {headerNode && <Typography sx={{color: "primary.main", alignSelf: "center" }} variant="h6">{headerNode}</Typography>}
                     {children}
                 </Section>
