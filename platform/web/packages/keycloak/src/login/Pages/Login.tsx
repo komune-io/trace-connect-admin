@@ -10,7 +10,7 @@ import { KcContext } from "../KcContext";
 export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) => {
     const { kcContext, i18n, doUseDefaultCss, Template, classes, } = props;
 
-    const { realm, url, usernameEditDisabled, login, auth } = kcContext;
+    const { realm, url, usernameHidden, login, auth } = kcContext;
 
     const { msgStr } = i18n;
     const [isAuthenticating, setAuthenticating] = useState(false)
@@ -40,7 +40,7 @@ export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" 
             label: msgStr("email"),
             params: {
                 textFieldType: "text",
-                disabled: usernameEditDisabled,
+                disabled: usernameHidden,
                 inputProps: {
                     tabIndex: 1
                 }
@@ -70,7 +70,7 @@ export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" 
                 }
             },
             validator: validators.password(t)
-        }, ...(realm.rememberMe && !usernameEditDisabled ? [{
+        }, ...(realm.rememberMe && !usernameHidden ? [{
             name: "rememberMe",
             type: "checkBox",
             label: msgStr("rememberMe"),
@@ -80,7 +80,7 @@ export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" 
                 }
             }
         } as FormComposableField] : [])]
-    }, [realm, msgStr, usernameEditDisabled, t])
+    }, [realm, msgStr, usernameHidden, t])
 
     const actions = useMemo((): Action[] => {
         return [{
