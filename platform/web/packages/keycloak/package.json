@@ -1,11 +1,7 @@
 {
-    "name": "keycloakify-starter",
+    "name": "connect-admin-keycloakify",
     "version": "0.0.0",
-    "description": "Starter for Keycloakify 11",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/codegouvfr/keycloakify-starter.git"
-    },
+    "description": "Connect Admin Keycloakify Theme",
     "type": "module",
     "scripts": {
         "start": "vite",
@@ -14,7 +10,7 @@
         "storybook": "storybook dev -p 6006",
         "format": "prettier . --write"
     },
-    "license": "MIT",
+    "license": "Apache-2.0",
     "keywords": [],
     "dependencies": {
         "keycloakify": "^11.5.2",
