@@ -1,7 +1,7 @@
 // Copy pasted from: https://github.com/InseeFrLab/keycloakify/blob/main/src/login/Template.tsx
 
 import { type TemplateProps } from "keycloakify/login/TemplateProps";
-import type { KcContext } from "./kcContext";
+import type { KcContext } from "./KcContext";
 import type { I18n } from "./i18n";
 import { CssBaseline, Stack, Typography, styled} from '@mui/material'
 import { Alert, Section } from "@komune-io/g2"
