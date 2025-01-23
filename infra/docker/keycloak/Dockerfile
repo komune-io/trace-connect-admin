@@ -1,3 +1,4 @@
+
 ARG VERSION_NODE
 ARG VERSION_CONNECT
 
@@ -15,9 +16,14 @@ RUN printf "\
 
 ARG VERSION
 ENV REACT_APP_VERSION=$VERSION
+
 RUN yarn install
 ENV PATH /app/node_modules/.bin:$PATH
-RUN yarn workspace keycloak build-keycloak-theme
+
+RUN apk add --no-cache maven=3.9.5-r0
+
+WORKDIR /app/packages/keycloak
+RUN yarn build-keycloak-theme
 
 FROM komune/im-keycloak:${VERSION_CONNECT}
 
@@ -30,8 +36,9 @@ ENV KC_HOSTNAME_STRICT=false
 ENV KC_HOSTNAME=localhost
 ENV KC_HTTP_RELATIVE_PATH=/
 
-
-COPY --from=build /app/packages/keycloak/build_keycloak/target/*.jar /opt/keycloak/providers/
+COPY --from=build  /app/packages/keycloak/dist_keycloak/keycloak-theme-for-kc-22-to-25.jar /opt/keycloak/providers/
 RUN /opt/keycloak/bin/kc.sh build
+
+LABEL org.opencontainers.image.source="https://github.com/komune-io/trace-connect-admin"
 
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true", "start"]
