@@ -87,6 +87,8 @@ export const useUserFunctionnalities = (params?: UseUserFunctionnalitiesParams) 
     )
 
     const fieldsOverride = useMemo((): UserFactoryFieldsOverride => {
+        console.log(!isUpdate)
+        console.log(!formState.values.memberOf)
         return {
             roles: {
                 params: {
