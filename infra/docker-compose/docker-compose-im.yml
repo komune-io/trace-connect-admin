@@ -3,11 +3,11 @@ services:
     image: ${DOCKER_REPOSITORY}im-gateway:${VERSION_IM}
     container_name: ${DOCKER_CONTAINER_PREFIX}-im
     environment:
-      - i2_issuers[0]_name=local
-      - i2_issuers[0]_authUrl=${AUTH_HOST_URL}
-      - i2_issuers[0]_realm=im-test
-      - i2_issuers[0]_im_clientId=sb-platform-app-im
-      - i2_issuers[0]_im_clientSecret=secret
+      - f2_tenant_issuer-base-uri=${AUTH_HOST_URL}
+      - connect_im_keycloak_url=${AUTH_HOST_URL}
+      - connect_im_keycloak_realm=master
+      - connect_im_keycloak_clientId=${KC_IM_CLIENT_ID}
+      - connect_im_keycloak_clientSecret=${KC_IM_CLIENT_SECRET}
     ports:
       - "8009:8009"
     networks:

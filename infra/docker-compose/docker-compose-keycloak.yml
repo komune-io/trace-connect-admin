@@ -9,12 +9,14 @@ services:
       KC_DB_PASSWORD: admin
       KC_DB_USERNAME: admin
       KC_DB_SCHEMA: public
-      KC_HOSTNAME: ${KC_HOSTNAME}:8080
+      KC_HOSTNAME: ${AUTH_HOST_URL}
+      KEYCLOAK_FRONTEND_URL: ${AUTH_HOST_URL}
       KEYCLOAK_ADMIN: ${KC_ROOT_USER}
       KEYCLOAK_ADMIN_PASSWORD: ${KC_ROOT_PASS}
       PROXY_ADDRESS_FORWARDING: "true"
       JDBC_PARAMS: "ssl=false"
-      KC_HOSTNAME_STRICT_HTTPS: "false"
+      #      KC_HOSTNAME_STRICT_HTTPS: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "true"
     ports:
       - '8080:8080'
     depends_on:

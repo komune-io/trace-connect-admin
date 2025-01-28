@@ -4,7 +4,7 @@ import { PageHeaderObject, useExtendedAuth } from "components";
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
-import { useUserFunctionnalities } from './useUserFunctionnalities';
+import { useUserFunctionalities } from './useUserFunctionalities';
 
 
 export const UserCreationPage = () => {
@@ -16,8 +16,9 @@ export const UserCreationPage = () => {
         return searchParams.get('organizationId') ?? service.getUser()?.memberOf
     }, [searchParams, service.getUser])
 
-    const { checkEmailValidity, fieldsOverride, formState, formActions, isLoading, user } = useUserFunctionnalities( {
-        organizationId
+    const { checkEmailValidity, fieldsOverride, formState, formActions, isLoading, user } = useUserFunctionalities( {
+        organizationId,
+        isCreate: true
     })
     
     return (

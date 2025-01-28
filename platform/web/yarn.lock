@@ -2871,18 +2871,18 @@
     "@komune-io/g2-themes" "0.6.0-alpha.8db9417"
     "@komune-io/g2-utils" "0.6.0-alpha.8db9417"
 
-"@komune-io/im-apikey-domain@0.21.0-alpha.b1ab018":
-  version "0.21.0-alpha.b1ab018"
-  resolved "https://registry.npmjs.org/@komune-io/im-apikey-domain/-/im-apikey-domain-0.21.0-alpha.b1ab018.tgz#d937eff80097117327c5eeb0ea059e1a412afc86"
-  integrity sha512-YQU/jav1uopYkGNXAA93LfW2jTxrRt55DzGzHnbgdx9nbiNYUu8cFnsYwLJRgvoMHiSRcNuqXRufWqTGMNDITQ==
+"@komune-io/im-apikey-domain@0.21.0-alpha.055c5e7":
+  version "0.21.0-alpha.055c5e7"
+  resolved "https://registry.npmjs.org/@komune-io/im-apikey-domain/-/im-apikey-domain-0.21.0-alpha.055c5e7.tgz#fb43c0c2134300de31e2b27c7117f54e13eee4ea"
+  integrity sha512-mzMsGgFviBBUDX4pHg1sAJC752hdnGlm+oNsiv0eUtJx9uoQ4YQ1YKLdHM4C4TYATxTjCydj79Bfas1DfpJHrQ==
   dependencies:
     "@js-joda/core" "3.2.0"
     format-util "^1.0.5"
 
-"@komune-io/im-organization-domain@0.21.0-alpha.b1ab018":
-  version "0.21.0-alpha.b1ab018"
-  resolved "https://registry.npmjs.org/@komune-io/im-organization-domain/-/im-organization-domain-0.21.0-alpha.b1ab018.tgz#4b61b00fd65b6b2b5304f7efa1b449b63a297922"
-  integrity sha512-ci16b+C/38lYkAQdDI7mwxPsTDvaWy6KdrVzg7V4E/C5wN/eb2MPcGs1o+0PWj+pmQFx+oqNJSSf1uJU/d3vxQ==
+"@komune-io/im-organization-domain@0.21.0-alpha.055c5e7":
+  version "0.21.0-alpha.055c5e7"
+  resolved "https://registry.npmjs.org/@komune-io/im-organization-domain/-/im-organization-domain-0.21.0-alpha.055c5e7.tgz#394e367ac05ae14488cbc43153e6a17fffb69f1a"
+  integrity sha512-ccwkOezzkPuJ3lwVBaKnqnL4cPRKox1JLzb4TpqM2kT0uBqisILrSptCOyIICgdG9COJunheMIItguPSLg4xxA==
   dependencies:
     "@js-joda/core" "3.2.0"
     format-util "^1.0.5"
@@ -2898,18 +2898,18 @@
     node-fetch "2.6.7"
     ws "8.5.0"
 
-"@komune-io/im-privilege-domain@0.21.0-alpha.b1ab018":
-  version "0.21.0-alpha.b1ab018"
-  resolved "https://registry.npmjs.org/@komune-io/im-privilege-domain/-/im-privilege-domain-0.21.0-alpha.b1ab018.tgz#8322bdcc12ad6c5b769c4d77212fdc7516875fb2"
-  integrity sha512-dhwSmibwf2Xefowp4SpGpzx3fmM/y96aS94wrs50WgFWbtZRMhkUjRXkIMGH3LnAyNfUjGPr/TIvG18wDGbSMQ==
+"@komune-io/im-privilege-domain@0.21.0-alpha.055c5e7":
+  version "0.21.0-alpha.055c5e7"
+  resolved "https://registry.npmjs.org/@komune-io/im-privilege-domain/-/im-privilege-domain-0.21.0-alpha.055c5e7.tgz#f021f059784156691d5d084b3f1553f33a691601"
+  integrity sha512-0fB9ctlwe1AKTSzxSqfsUXRRid3VSim/wN/1txdZc119ulKEM0ZZjBlWXcWFpoVHhWJnuT963DcxRjerH3Z0Lw==
   dependencies:
     "@js-joda/core" "3.2.0"
     format-util "^1.0.5"
 
-"@komune-io/im-user-domain@0.21.0-alpha.b1ab018":
-  version "0.21.0-alpha.b1ab018"
-  resolved "https://registry.npmjs.org/@komune-io/im-user-domain/-/im-user-domain-0.21.0-alpha.b1ab018.tgz#85220099161745a01c7c29cfd0de93f01fa75832"
-  integrity sha512-Y3DO19+mmu3wRHSRpvEniDp5AbUhn974Nb+/0ujf4AC/XKRCtRT4VEKjsIIwZJgKuyWjkQ2uaH2m6138b9FvtQ==
+"@komune-io/im-user-domain@0.21.0-alpha.055c5e7":
+  version "0.21.0-alpha.055c5e7"
+  resolved "https://registry.npmjs.org/@komune-io/im-user-domain/-/im-user-domain-0.21.0-alpha.055c5e7.tgz#f35bd2ac56bf6cef2114f1e22455d54ba85b3f84"
+  integrity sha512-JlgHeyYOIYyLipluXPSNZsYZOMU1jaMcorOQNey7tYQdhdnN0bD5gRgOoDQx9lBXUoVfFjcdFyB1snCrbdyIDg==
   dependencies:
     "@js-joda/core" "3.2.0"
     format-util "^1.0.5"

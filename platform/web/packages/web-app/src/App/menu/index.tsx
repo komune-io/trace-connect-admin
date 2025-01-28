@@ -66,7 +66,7 @@ export const useMenu = (t: TFunction) => {
         to: users(),
         label: t("users"),
         icon: <SupervisedUserCircleIcon />,
-        isVisible: service.hasUserRouteAuth({route: "users"})
+        isVisible: service.hasUserRouteAuth({route: "users"}) && service.is_im_user_read()
     },{
         key: "apiKeys",
         to: apiKeys(),

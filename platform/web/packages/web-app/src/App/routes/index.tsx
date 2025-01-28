@@ -1,4 +1,4 @@
-import { NoMatchPage, Router } from "@komune-io/g2";
+import {NoMatchPage, Router, useAuth} from "@komune-io/g2";
 import { Route, useParams, useSearchParams } from "react-router-dom";
 import { Routes, useExtendedAuth } from "components";
 import { App } from "App";
@@ -75,13 +75,18 @@ const allPages: PageRoute[] = [...imPages]
 
 export const AppRouter = () => {
   const pages = useMemo(() => allPages.map((page) => GenerateRoute(page)), [])
-
+  const { service } = useAuth()
+  const memberOf = service.getUser()?.memberOf
   const {policies} = useExtendedAuth()
-
+  const element = useMemo(() => {
+    if (policies.organization.canList()) return <OrganizationListPage />
+    if (memberOf) return <OrganizationProfilePage myOrganization />
+    return <UserProfilePage myProfile />
+  }, [memberOf, policies.organization])
   return (
     <Router>
       <Route path="/" element={<App />} >
-        <Route path="" element={policies.organization.canList() ? <OrganizationListPage /> : <OrganizationProfilePage myOrganization />} />
+        <Route path="" element={element} />
         {pages}
       </Route >
     </Router>

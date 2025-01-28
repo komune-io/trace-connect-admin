@@ -1,6 +1,7 @@
 ### Config ###
 **/env-config.js
 **/OidcTrustedDomains.js
+env-config.js
 
 ### Gradle ###
 .gradle
