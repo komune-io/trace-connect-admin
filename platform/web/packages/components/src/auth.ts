@@ -25,12 +25,13 @@ const policies = {
 const staticServices: KeycloackService<StaticServices, Permissions> = {
     hasUserRouteAuth: (_, services, params) => {
         const { route = "", authorizedUserId, authorizedUserOrgId } = params ?? {}
+        const authorizations = routesAuthorizations[route]
+        if (authorizations === "open") return true
+
         const currentUser = services.getUser()
         const isAuthedUserId = !!authorizedUserId && currentUser?.id === authorizedUserId
         const isAuthedOrgId = !!authorizedUserOrgId && currentUser?.memberOf === authorizedUserOrgId
-        const authorizations = routesAuthorizations[route]
-        if (authorizations === "open") return true
-        else return checkRelations(authorizations, currentUser, isAuthedUserId, isAuthedOrgId, services.hasRole)
+        return checkRelations(authorizations, currentUser, isAuthedUserId, isAuthedOrgId, services.hasRole)
     }
 }
 

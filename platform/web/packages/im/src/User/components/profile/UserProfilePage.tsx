@@ -7,7 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Box } from "@mui/material"
 import { useDeleteUserPopUp } from '../../hooks/useDeleteUserPopUp';
 import { useQueryClient } from '@tanstack/react-query';
-import { useUserFunctionnalities } from './useUserFunctionnalities';
+import { useUserFunctionalities } from './useUserFunctionalities';
 
 export interface UserProfilePageProps {
     myProfile?: boolean
@@ -45,7 +45,7 @@ export const UserProfilePage = (props: UserProfilePageProps) => {
         onDeleteClick
     })
 
-    const {formState, user, isLoading, getOrganizationUrl, fieldsOverride} = useUserFunctionnalities({
+    const {formState, user, isLoading, getOrganizationUrl, fieldsOverride} = useUserFunctionalities({
         myProfile,
         userId,
         readonly: true

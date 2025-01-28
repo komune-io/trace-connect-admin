@@ -9,7 +9,7 @@ window._env_ = {
     keycloak: {
       realm: "im-test",
       clientId: "connect-admin-web",
-      url: "http://keycloak-it:8080"
+      url: "http://im-keycloak:8080"
     }
   }
 };

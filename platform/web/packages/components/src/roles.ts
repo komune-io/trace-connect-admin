@@ -140,7 +140,8 @@ export const permissions = [
     "im_role_read",
     "im_role_write",
     "im_apikey_read",
-    "im_apikey_write"
+    "im_apikey_write",
+    "feat_im_all"
 ] as const
 
 export type Permissions = typeof permissions[number]

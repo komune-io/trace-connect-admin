@@ -3,7 +3,7 @@ import { UserFactory } from 'connect-im';
 import { PageHeaderObject, useExtendedAuth } from "components";
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { useUserFunctionnalities } from './useUserFunctionnalities';
+import { useUserFunctionalities } from './useUserFunctionalities';
 
 export interface UserUpdatePageProps {
     myProfile?: boolean
@@ -13,11 +13,11 @@ export const UserUpdatePage = (props: UserUpdatePageProps) => {
     const { myProfile = false } = props
     const { t } = useTranslation();
     const { service } = useExtendedAuth()
-    const { userId =  service.getUserId() } = useParams();
+    const { userId } = useParams();
 
     const isAdmin = service.is_im_user_write()
 
-    const { checkEmailValidity, fieldsOverride, formState, formActions, isLoading, user } = useUserFunctionnalities({
+    const { checkEmailValidity, fieldsOverride, formState, formActions, isLoading, user } = useUserFunctionalities({
         isUpdate: true,
         myProfile,
         userId

@@ -73,7 +73,7 @@
                 "fr": "Utilisateur",
                 "en": "User"
             },
-            "permissions": ["im_user_read", "tr_project_read", "fs_file_read"]
+            "permissions": ["im_user_read", "tr_project_read",  "im_role_read", "fs_file_read"]
         },
         {
             "name": "admin",
@@ -85,7 +85,7 @@
             },
             "permissions": [
                 "im_organization_read", "im_organization_write",
-                "im_user_read", "im_user_write",
+                "im_user_read", "im_user_write", "im_user_role_write",
                 "im_role_read",  "im_role_write",
                 "im_apikey_read", "im_apikey_write",
                 "fs_file_write", "fs_file_read", "fs_policy_write",

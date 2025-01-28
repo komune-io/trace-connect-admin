@@ -3,24 +3,25 @@ import { UserFactoryFieldsOverride, useGetOrganizationRefs, useUserFormState, us
 import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { usePolicies } from '../../../Policies/usePolicies';
+import { useUserPolicies } from '../../../Policies/usePolicies';
 import { Action, imConfig, validators } from '@komune-io/g2';
 
-interface UseUserFunctionnalitiesParams {
+interface UseUserFunctionalitiesParams {
     organizationId?: string
     userId?: string
     isUpdate?: boolean
+    isCreate?: boolean
     myProfile?: boolean
     readonly?: boolean
 }
 
-export const useUserFunctionnalities = (params?: UseUserFunctionnalitiesParams) => {
-    const { isUpdate = false, myProfile = false, organizationId, userId, readonly = false } = params ?? {}
+export const useUserFunctionalities = (params?: UseUserFunctionalitiesParams) => {
+    const { isUpdate = false, isCreate = false, myProfile = false, organizationId, userId, readonly = false } = params ?? {}
     const { t, i18n } = useTranslation();
     const navigate = useNavigate()
     const { keycloak, roles } = useExtendedAuth()
     const getOrganizationRefs = useGetOrganizationRefs({ jwt: keycloak.token })
-    const frontPolicies = usePolicies({ myProfile: myProfile })
+
 
     const { usersUserIdView, organizationsOrganizationIdView } = useRoutesDefinition()
     const onSave = useCallback(
@@ -45,6 +46,8 @@ export const useUserFunctionnalities = (params?: UseUserFunctionnalitiesParams) 
         multipleRoles: false,
         organizationId
     })
+
+    const userPolicies = useUserPolicies({ user: user })
 
     const rolesOptions = useMemo(() => {
         const org = getOrganizationRefs.query.data?.items.find((org) => org.id === formState.values.memberOf)
@@ -91,19 +94,19 @@ export const useUserFunctionnalities = (params?: UseUserFunctionnalitiesParams) 
             roles: {
                 params: {
                     options: rolesOptions,
-                    disabled: !isUpdate && !formState.values.memberOf
+                    disabled: !isCreate && !isUpdate && !formState.values.memberOf
                 },
-                readOnly: isUpdate && !frontPolicies.user.canUpdateRole,
+                readOnly: !isCreate && !isUpdate || !userPolicies.canUpdateRole,
                 validator: validators.requiredField(t)
             },
             memberOf: {
-                readOnly: isUpdate || !frontPolicies.user.canUpdateOrganization,
+                readOnly: !isCreate && !isUpdate || !userPolicies.canUpdateOrganization,
                 params: {
                     options: organizationOptions
                 }
             }
         }
-    }, [t, rolesOptions, isUpdate, organizationOptions, frontPolicies.user, formState.values.memberOf])
+    }, [t, rolesOptions, isUpdate, organizationOptions, userPolicies, formState.values.memberOf])
 
     return {
         formState, 
