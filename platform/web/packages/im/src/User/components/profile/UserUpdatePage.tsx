@@ -1,6 +1,6 @@
 import { Page, Section, } from '@komune-io/g2';
 import { UserFactory } from 'connect-im';
-import { PageHeaderObject, useExtendedAuth } from "components";
+import { PageHeaderObject } from "components";
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useUserFunctionalities } from './useUserFunctionalities';
@@ -12,10 +12,7 @@ export interface UserUpdatePageProps {
 export const UserUpdatePage = (props: UserUpdatePageProps) => {
     const { myProfile = false } = props
     const { t } = useTranslation();
-    const { service } = useExtendedAuth()
     const { userId } = useParams();
-
-    const isAdmin = service.is_im_user_write()
 
     const { checkEmailValidity, fieldsOverride, formState, formActions, isLoading, user } = useUserFunctionalities({
         isUpdate: true,
@@ -41,7 +38,7 @@ export const UserUpdatePage = (props: UserUpdatePageProps) => {
                     isLoading={isLoading}
                     user={user}
                     userId={userId}
-                    resetPasswordType={myProfile ? 'email' : isAdmin ? "forced" : undefined}
+                    resetPasswordType={myProfile ? 'email' : undefined}
                     multipleRoles={false}
                     fieldsOverride={fieldsOverride}
                     checkEmailValidity={checkEmailValidity}
