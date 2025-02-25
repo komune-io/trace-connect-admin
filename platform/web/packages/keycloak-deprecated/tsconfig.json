@@ -1,5 +1,0 @@
-{
-    "extends": "../web-app/tsconfig.json",
-    "include": ["src"]
-  }
-  
