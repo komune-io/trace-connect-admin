@@ -1,5 +1,4 @@
-import { FormikFormParams, useFormComposable } from '@komune-io/g2'
-import { imConfig, useAuth } from '@komune-io/g2'
+import { FormikFormParams, imConfig, useAuth, useFormComposable } from '@komune-io/g2'
 import { useCallback, useMemo } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { OrganizationId } from '../../../Organization'
@@ -149,7 +148,7 @@ export const useUserFormState = <T extends User = User>(
       const results: Promise<any>[] = []
       //@ts-ignore
       results.push(updateUser.mutateAsync({ ...user, memberOf: user.memberOf?.id }))
-      if (getUser.data?.item.email !== user.email) {
+      if (getUser.data?.item?.email !== user.email) {
         results.push(
           updateEmail.mutateAsync({
             email: user.email,
@@ -164,7 +163,7 @@ export const useUserFormState = <T extends User = User>(
       }
       return true
     },
-    [updateUser.mutateAsync, updateEmail.mutateAsync, getUser.data?.item.email]
+    [updateUser.mutateAsync, updateEmail.mutateAsync, getUser.data?.item?.email]
   )
 
   const createUserMemoized = useCallback(

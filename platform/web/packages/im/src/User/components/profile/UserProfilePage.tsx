@@ -5,7 +5,7 @@ import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box } from "@mui/material"
-import { useDeleteUserPopUp } from '../../hooks/useDeleteUserPopUp';
+import { useDeleteUserPopUp, useActivateMfaPopUp, useDisableMfaPopUp} from '../../hooks';
 import { useQueryClient } from '@tanstack/react-query';
 import { useUserFunctionalities } from './useUserFunctionalities';
 
@@ -41,26 +41,43 @@ export const UserProfilePage = (props: UserProfilePageProps) => {
         }, [queryClient.invalidateQueries, users]
     )
 
-    const { popup, open } = useDeleteUserPopUp({
+    const deleteUserPopUp = useDeleteUserPopUp({
         onDeleteClick
     })
+
+    const activateMfaPopup =  useActivateMfaPopUp()
+    const disableMfaPopUp =  useDisableMfaPopUp()
 
     const {formState, user, isLoading, getOrganizationUrl, fieldsOverride} = useUserFunctionalities({
         myProfile,
         userId,
         readonly: true
     })
-
     const headerRightPart = useMemo(() => {
         if (!user) {
             return []
         }
-
-        return [
-            policies.user.canDelete(user) ? <Button onClick={() => open(user)} color="error" key="deleteButton">{t("delete")}</Button> : undefined,
+        const actions = [
+            policies.user.canDelete(user) ? <Button onClick={() => deleteUserPopUp.open(user)} color="error" key="deleteButton">{t("delete")}</Button> : undefined,
             policies.user.canUpdate(user) ? <LinkButton to={usersUserIdEdit(user.id)} key="pageEditButton">{t("update")}</LinkButton> : undefined,
         ]
-    }, [user, myProfile, usersUserIdEdit, open, userId, policies.user])
+        // @ts-ignore
+        const mfa = user.mfa
+        const isMfaEnable = !mfa || mfa.length === 0
+        if(isMfaEnable) {
+            policies.user.canConfigureMfa(user)
+                && actions.push(
+              <Button onClick={() => activateMfaPopup.open()} color="primary" key="activeMfaButton">{t("mfa.activate")}</Button>
+            )
+        } else {
+            policies.user.canDisableMfa(user)
+                && actions.push(
+                  <Button onClick={() => disableMfaPopUp.open(user)} color="error" key="disableMfaButton">{t("mfa.disable")}</Button>
+            )
+        }
+
+        return actions
+    }, [user, t, myProfile, usersUserIdEdit, open, userId, policies.user])
 
     return (
         <Page
@@ -95,7 +112,9 @@ export const UserProfilePage = (props: UserProfilePageProps) => {
                     fieldsOverride={fieldsOverride}
                 />
             </Section>
-            {popup}
+            {deleteUserPopUp.popup}
+            {activateMfaPopup.popup}
+            {disableMfaPopUp.popup}
         </Page>
     )
 }

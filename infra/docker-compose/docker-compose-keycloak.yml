@@ -1,11 +1,11 @@
 services:
-  keycloak-it:
+  im-keycloak:
 #    image: ${DOCKER_REPOSITORY}connect-admin-keycloak:${CONNECT_ADMIN_KEYCLOAK_VERSION}
     image: ${DOCKER_REPOSITORY}im-keycloak:${VERSION_IM}
-    container_name: ${DOCKER_CONTAINER_PREFIX}-keycloak-it
+    container_name: ${DOCKER_CONTAINER_PREFIX}-im-keycloak
 #    network_mode: host
     environment:
-      KC_DB_URL: 'jdbc:postgresql://keycloak-it-postgres/keycloak-it'
+      KC_DB_URL: 'jdbc:postgresql://im-keycloak-postgres/im-keycloak'
       KC_DB_PASSWORD: admin
       KC_DB_USERNAME: admin
       KC_DB_SCHEMA: public
@@ -20,15 +20,15 @@ services:
     ports:
       - '8080:8080'
     depends_on:
-      - keycloak-it-postgres
+      - im-keycloak-postgres
     networks:
       - net
 
-  keycloak-it-postgres:
+  im-keycloak-postgres:
     image: postgres
     container_name: ${DOCKER_CONTAINER_PREFIX}-keycloak-postgres
     environment:
-      POSTGRES_DB: keycloak-it
+      POSTGRES_DB: im-keycloak
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     ports:

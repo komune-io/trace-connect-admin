@@ -1,13 +1,12 @@
-import { FormComposableField } from '@komune-io/g2'
 import { useCallback, useMemo, useState } from 'react'
 import {
-  AdressFieldsName,
+  AddressFieldsName,
   mergeFields,
-  useAdressFields
+  useAddressFields
 } from '../../../Commons'
 import { OrganizationId } from '../../../Organization'
 import { User } from '../../Domain'
-import { validators } from '@komune-io/g2'
+import { FormComposableField, validators } from '@komune-io/g2'
 import { useTranslation } from 'react-i18next'
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i
@@ -21,7 +20,7 @@ export type userFieldsName =
   | 'memberOf'
   | 'sendVerifyEmail'
   | 'sendResetPassword'
-  | AdressFieldsName
+  | AddressFieldsName
 
 export type UserFactoryFieldsOverride = Partial<
   Record<userFieldsName, Partial<FormComposableField<userFieldsName>>>
@@ -33,7 +32,7 @@ export interface UseUserFormFieldsProps<T extends User> {
    */
   fieldsOverride?: UserFactoryFieldsOverride
   /**
-   * Allow the user to have multipe roles
+   * Allow the user to have multiple roles
    *
    * @default true
    */
@@ -102,7 +101,7 @@ export const useUserFormFields = <T extends User = User>(
     [user?.email, checkEmailValidity, t]
   )
 
-  const { addressFields } = useAdressFields({
+  const { addressFields } = useAddressFields({
     //@ts-ignore
     fieldsOverride
   })

@@ -18,7 +18,7 @@ export interface UseDeletedConfirmationType {
 }
 
 export const useDeletedConfirmationPopUp = (props: UseDeletedConfirmationProps): UseDeletedConfirmationType => {
-    const {  title, component, onDelete  } = props
+    const {  title, component, onDelete } = props
     const { t } = useTranslation()
     const [isOpen, setOpen] = useState(false)
 
@@ -53,7 +53,6 @@ export const useDeletedConfirmationPopUp = (props: UseDeletedConfirmationProps):
         color: "error",
         onClick: onDeleteClicked,
     }], [close, t, onDeleteClicked])
-
 
     const popup = useMemo(() => (
         <PopUp open={isOpen} onClose={(event) => close(event)} actions={actions}>

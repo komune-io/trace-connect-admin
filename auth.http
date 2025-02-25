@@ -1,6 +1,6 @@
 
 ### Authentication
-POST http://keycloak-it:8080/realms/im-test/protocol/openid-connect/token
+POST http://im-keycloak:8080/realms/im-test/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id = connect-admin-app &

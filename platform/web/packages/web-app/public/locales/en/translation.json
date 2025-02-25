@@ -46,6 +46,12 @@
   "status": "Status",
   "files": "Files",
   "home": "Home",
+  "mfa": {
+    "disable": "Disable Multi-factor Authentication",
+    "disableDescription": "Are you sure you want to disable authentication? This may reduce the security of your account.",
+    "activate": "Activate Multi-factor Authentication",
+    "activateDescription": "You will be redirected to the authentication page to enter your username and password. Once authenticated, the multi-factor authentication (MFA) setup will begin."
+  },
   "organizationStatus": {
     "VALIDATED": "Validated",
     "PENDING": "Pending verification",

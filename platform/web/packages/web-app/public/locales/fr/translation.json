@@ -40,6 +40,12 @@
   "closeOrganization": "Fermer l'organisation",
   "status": "Status",
   "home": "Home",
+  "mfa": {
+    "disable": "Désactiver le Multi-factor Authentication",
+    "disableDescription": "Êtes-vous sûr de vouloir désactiver l'authentification ? Cela pourrait réduire la sécurité de votre compte.",
+    "activate": "Activer le Multi-factor authentication",
+    "activateDescription": "Vous serez redirigé vers la page d'authentification pour saisir votre nom d'utilisateur et votre mot de passe. Une fois authentifié, la configuration de l'authentification multifacteur (MFA) commencera.",
+  },
   "organizationStatus": {
     "VALIDATED": "Validé",
     "PENDING": "En attente de vérification",

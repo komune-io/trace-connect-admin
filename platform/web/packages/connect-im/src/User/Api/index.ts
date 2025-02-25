@@ -6,8 +6,14 @@ import {
   UserUpdatePasswordCommand,
   UserUpdatePasswordResult
 } from '../Domain'
-import { CommandParams, QueryParams, request, useCommandRequest, useQueryRequest } from '@komune-io/g2'
-import { useAuthenticatedRequest } from '@komune-io/g2'
+import {
+  CommandParams,
+  QueryParams,
+  request,
+  useAuthenticatedRequest,
+  useCommandRequest,
+  useQueryRequest
+} from '@komune-io/g2'
 
 export const useGetUsers = <T extends User = User>(params: QueryParams<{id: string}, {items: T[], total: number}>) => {
   const requestProps = useAuthenticatedRequest("im")
@@ -79,3 +85,4 @@ export const userExistsByEmail = async (
 }
 
 export * from './UserDisableFunction'
+export * from './UserDisableMfaFunction'

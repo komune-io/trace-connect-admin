@@ -1,4 +1,3 @@
-import { imConfig, useAuth } from '@komune-io/g2'
 import { useCallback, useMemo } from 'react'
 import {
   FlatOrganization,
@@ -15,8 +14,10 @@ import {
   useOrganizationUploadLogo,
   useUpdateOrganization
 } from '../../Api'
-import { FormikFormParams, useFormComposable } from '@komune-io/g2'
-import { CommandOptions, CommandWithFile, QueryOptions } from '@komune-io/g2'
+import {
+  CommandOptions, CommandWithFile, QueryOptions,
+  FormikFormParams, imConfig, useAuth, useFormComposable
+} from '@komune-io/g2'
 
 export interface useOrganizationFormStateProps<
   T extends Organization = Organization

@@ -1,6 +1,4 @@
 import { cx } from '@emotion/css'
-import { Option } from '@komune-io/g2'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
 import React, { useMemo } from 'react'
 import { User } from '../../Domain'
 import { Stack, StackProps } from '@mui/material'
@@ -8,9 +6,12 @@ import { useElementSize } from '@mantine/hooks'
 import { UserSummary } from '../UserSummary'
 import { useDeletableForm } from '../../../Commons/useDeletableForm'
 import {
+  BasicProps,
   FormComposable,
   FormComposableField,
-  FormComposableState
+  FormComposableState,
+  MergeMuiElementProps,
+  Option
 } from '@komune-io/g2'
 import {
   userFieldsName,
@@ -18,8 +19,8 @@ import {
   UseUserFormFieldsProps
 } from './useUserFormFields'
 import {
-  ChoicedResetPassword,
-  ChoicedResetPasswordProps
+  ChosenResetPassword,
+  ChosenResetPasswordProps
 } from '../UserResetPassword'
 
 export type Validated = boolean
@@ -64,7 +65,7 @@ export interface UserFactoryBasicProps
   /**
    * The props passed to the component ChoicedResetPassword
    */
-  choicedResetPasswordProps?: ChoicedResetPasswordProps
+  chosenResetPasswordProps?: ChosenResetPasswordProps
   /**
    * The type of the reset password. If not provided the component will not be rendered
    */
@@ -95,7 +96,7 @@ export const UserFactory = (props: UserFactoryProps) => {
     update = false,
     userId,
     resetPasswordType,
-    choicedResetPasswordProps,
+    chosenResetPasswordProps,
     ...other
   } = props
 
@@ -104,7 +105,7 @@ export const UserFactory = (props: UserFactoryProps) => {
   const { fieldsArray } = useUserFormFields(props)
   delete other.getOrganizationUrl
 
-  const definitivBlockedFields = useMemo(
+  const definitiveBlockedFields = useMemo(
     (): userFieldsName[] => [
       //@ts-ignore
       ...(!fieldsOverride?.memberOf?.params?.options && !organizationId
@@ -122,7 +123,7 @@ export const UserFactory = (props: UserFactoryProps) => {
   const finalFields = useDeletableForm<FormComposableField<string, {}>>({
     initialFields: fieldsArray,
     additionalFields: additionalFields,
-    blockedFields: definitivBlockedFields
+    blockedFields: definitiveBlockedFields
   })
 
   return (
@@ -168,10 +169,10 @@ export const UserFactory = (props: UserFactoryProps) => {
         <>
           {formExtension}
           {userId && resetPasswordType && (
-            <ChoicedResetPassword
+            <ChosenResetPassword
               resetPasswordType={resetPasswordType}
               userId={userId}
-              {...choicedResetPasswordProps}
+              {...chosenResetPasswordProps}
             />
           )}
         </>

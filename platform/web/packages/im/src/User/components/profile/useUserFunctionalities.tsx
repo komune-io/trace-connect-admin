@@ -104,7 +104,7 @@ export const useUserFunctionalities = (params?: UseUserFunctionalitiesParams) =>
                 params: {
                     options: organizationOptions
                 }
-            }
+            },
         }
     }, [t, rolesOptions, isUpdate, organizationOptions, userPolicies, formState.values.memberOf])
 

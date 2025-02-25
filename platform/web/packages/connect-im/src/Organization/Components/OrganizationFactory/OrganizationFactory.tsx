@@ -1,14 +1,16 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import { FormProps } from '@komune-io/g2'
 import { styled, Typography } from '@mui/material'
-import { BasicProps, MergeMuiElementProps, Popover } from '@komune-io/g2'
 import { cx } from '@emotion/css'
 import { Organization } from '../../Domain'
 import { useDeletableForm } from '../../../Commons/useDeletableForm'
 import {
+  BasicProps,
   FormComposable,
   FormComposableField,
-  FormComposableState
+  FormComposableState,
+  FormProps,
+  MergeMuiElementProps,
+  Popover
 } from '@komune-io/g2'
 import {
   organizationFieldsName,

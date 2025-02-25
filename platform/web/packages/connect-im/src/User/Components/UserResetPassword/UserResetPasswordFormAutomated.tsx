@@ -1,12 +1,11 @@
 import { useCallback } from 'react'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
+import { BasicProps, CommandOptions, MergeMuiElementProps } from '@komune-io/g2'
 import { UserId, UserResetPasswordCommand, UserUpdatePasswordCommand, UserUpdatePasswordResult } from '../../Domain'
 import {
   UserResetPasswordForm,
   UserResetPasswordFormProps
 } from './UserResetPasswordForm'
 import { useUserUpdatePassword } from '../..'
-import { CommandOptions } from '@komune-io/g2'
 
 export interface UserResetPasswordFormAutomatedBasicProps extends BasicProps {
   /**
