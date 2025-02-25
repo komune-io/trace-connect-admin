@@ -79,3 +79,4 @@ export const userExistsByEmail = async (
 }
 
 export * from './UserDisableFunction'
+export * from './UserDisableMfaFunction'

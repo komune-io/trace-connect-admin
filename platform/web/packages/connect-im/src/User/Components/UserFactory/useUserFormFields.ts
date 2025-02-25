@@ -33,7 +33,7 @@ export interface UseUserFormFieldsProps<T extends User> {
    */
   fieldsOverride?: UserFactoryFieldsOverride
   /**
-   * Allow the user to have multipe roles
+   * Allow the user to have multiple roles
    *
    * @default true
    */

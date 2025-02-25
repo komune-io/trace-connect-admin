@@ -1,15 +1,16 @@
 import { useTranslation } from "react-i18next";
 import React, { useCallback, useMemo, useState } from "react";
-import { Action, PopUp } from "@komune-io/g2";
+import {ConfirmationPopUp} from "@komune-io/g2";
 import { Typography } from "@mui/material";
 
-export interface UseDeletedConfirmationProps {
+export interface UseConfirmationProps {
     title: string
     component?: React.ReactNode
-    onDelete: () => Promise<void>
+    onConfirm: (event: React.ChangeEvent<{}>) => void;
+    onConfirmClose?: boolean;
 }
 
-export interface UseDeletedConfirmationType {
+export interface UseConfirmationType {
     popup: React.ReactNode
     isOpen: boolean
     setOpen: (open: boolean) => void
@@ -17,8 +18,8 @@ export interface UseDeletedConfirmationType {
     close: (event: React.ChangeEvent<{}>) => void
 }
 
-export const useDeletedConfirmationPopUp = (props: UseDeletedConfirmationProps): UseDeletedConfirmationType => {
-    const {  title, component, onDelete } = props
+export const useConfirmationPopUp = (props: UseConfirmationProps): UseConfirmationType => {
+    const {  title, component, onConfirm, onConfirmClose = false  } = props
     const { t } = useTranslation()
     const [isOpen, setOpen] = useState(false)
 
@@ -36,30 +37,19 @@ export const useDeletedConfirmationPopUp = (props: UseDeletedConfirmationProps):
         [],
     )
 
-    const onDeleteClicked = useCallback(async (event: React.ChangeEvent<{}>) => {
-        event.stopPropagation()
-        await onDelete()
-        close(event)
-    }, [onDelete, close])
-
-    const actions = useMemo((): Action[] => [{
-        key: "cancel",
-        label: t("cancel"),
-        onClick: (event) => close(event),
-        variant: "text"
-    }, {
-        key: "delete",
-        label: t("delete"),
-        color: "error",
-        onClick: onDeleteClicked,
-    }], [close, t, onDeleteClicked])
+    const handleOnConfirm = useCallback((event: React.ChangeEvent<{}>) => {
+        onConfirm(event)
+        if(onConfirmClose) {
+            setOpen(false)
+        }
+    }, [setOpen, onConfirm, onConfirmClose])
 
     const popup = useMemo(() => (
-        <PopUp open={isOpen} onClose={(event) => close(event)} actions={actions}>
+        <ConfirmationPopUp onConfirm={handleOnConfirm}  open={isOpen} onClose={(event) => close(event)}>
             <Typography sx={{ whiteSpace: "pre-line" }} color="secondary" variant="h4">{title}</Typography>
             {component && <>{component}</>}
-        </PopUp>
-    ), [isOpen, close, t, actions, component, title]);
+        </ConfirmationPopUp>
+    ), [isOpen, close, t, component, title]);
 
     return {
         popup,

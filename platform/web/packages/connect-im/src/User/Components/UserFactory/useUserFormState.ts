@@ -148,8 +148,10 @@ export const useUserFormState = <T extends User = User>(
     async (user: User) => {
       const results: Promise<any>[] = []
       //@ts-ignore
-      results.push(updateUser.mutateAsync({ ...user, memberOf: user.memberOf?.id }))
-      if (getUser.data?.item.email !== user.email) {
+      const mfa = user["mfa"] == true ? ["OTP"] : []
+      //@ts-ignore
+      results.push(updateUser.mutateAsync({ ...user, mfa: mfa, memberOf: user.memberOf?.id }))
+      if (getUser.data?.item?.email !== user.email) {
         results.push(
           updateEmail.mutateAsync({
             email: user.email,
@@ -164,7 +166,7 @@ export const useUserFormState = <T extends User = User>(
       }
       return true
     },
-    [updateUser.mutateAsync, updateEmail.mutateAsync, getUser.data?.item.email]
+    [updateUser.mutateAsync, updateEmail.mutateAsync, getUser.data?.item?.email]
   )
 
   const createUserMemoized = useCallback(

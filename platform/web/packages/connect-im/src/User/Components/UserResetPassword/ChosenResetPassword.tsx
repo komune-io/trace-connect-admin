@@ -10,7 +10,7 @@ import {
 } from './UserResetPasswordFormAutomated'
 import { useTranslation } from 'react-i18next'
 
-export interface ChoicedResetPasswordBasicProps extends BasicProps {
+export interface ChosenResetPasswordBasicProps extends BasicProps {
   /**
    * The type of the reset password
    *
@@ -19,12 +19,12 @@ export interface ChoicedResetPasswordBasicProps extends BasicProps {
   resetPasswordType?: 'email' | 'forced'
 }
 
-export type ChoicedResetPasswordProps = MergeMuiElementProps<
+export type ChosenResetPasswordProps = MergeMuiElementProps<
   UserResetPasswordFormAutomatedProps,
-  ChoicedResetPasswordBasicProps
+  ChosenResetPasswordBasicProps
 >
 
-export const ChoicedResetPassword = (props: ChoicedResetPasswordProps) => {
+export const ChosenResetPassword = (props: ChosenResetPasswordProps) => {
   const {
     resetPasswordType = 'email',
     userId,
@@ -43,32 +43,32 @@ export const ChoicedResetPassword = (props: ChoicedResetPasswordProps) => {
 
   const onSuccess = useCallback(
     //@ts-ignore
-    (data, varaibles, context) => {
+    (data, variables, context) => {
       setMutating(false)
       onToggle()
       userUpdatePasswordOptions?.onSuccess &&
-        userUpdatePasswordOptions.onSuccess(data, varaibles, context)
+        userUpdatePasswordOptions.onSuccess(data, variables, context)
     },
     [onToggle, userUpdatePasswordOptions?.onSuccess]
   )
 
   const onMutate = useCallback(
     //@ts-ignore
-    (varaibles) => {
+    (variables) => {
       setMutating(true)
       userUpdatePasswordOptions?.onMutate &&
-        userUpdatePasswordOptions.onMutate(varaibles)
+        userUpdatePasswordOptions.onMutate(variables)
     },
     [userUpdatePasswordOptions?.onMutate]
   )
 
   const onError = useCallback(
     //@ts-ignore
-    (error, varaibles, context) => {
+    (error, variables, context) => {
       setMutating(false)
       setError(true)
       userUpdatePasswordOptions?.onError &&
-        userUpdatePasswordOptions.onError(error, varaibles, context)
+        userUpdatePasswordOptions.onError(error, variables, context)
     },
     [userUpdatePasswordOptions?.onError]
   )

@@ -28,6 +28,7 @@ export interface FlatUser {
   givenName: string
   email: string
   roles?: string[]
+  mfa?: string[]
   phone?: string
   sendEmailLink?: boolean
   street?: string
