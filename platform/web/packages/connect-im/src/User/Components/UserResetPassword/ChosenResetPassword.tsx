@@ -50,8 +50,7 @@ export const ChosenResetPassword = (props: ChosenResetPasswordProps) => {
     (data, variables, context) => {
       setMutating(false)
       onToggle()
-      userUpdatePasswordOptions?.onSuccess &&
-        userUpdatePasswordOptions.onSuccess(data, variables, context)
+      userUpdatePasswordOptions?.onSuccess?.(data, variables, context)
     },
     [onToggle, userUpdatePasswordOptions?.onSuccess]
   )
@@ -60,8 +59,7 @@ export const ChosenResetPassword = (props: ChosenResetPasswordProps) => {
     //@ts-ignore
     (variables) => {
       setMutating(true)
-      userUpdatePasswordOptions?.onMutate &&
-        userUpdatePasswordOptions.onMutate(variables)
+      userUpdatePasswordOptions?.onMutate?.(variables)
     },
     [userUpdatePasswordOptions?.onMutate]
   )
@@ -71,8 +69,7 @@ export const ChosenResetPassword = (props: ChosenResetPasswordProps) => {
     (error, variables, context) => {
       setMutating(false)
       setError(true)
-      userUpdatePasswordOptions?.onError &&
-        userUpdatePasswordOptions.onError(error, variables, context)
+      userUpdatePasswordOptions?.onError?.(error, variables, context)
     },
     [userUpdatePasswordOptions?.onError]
   )

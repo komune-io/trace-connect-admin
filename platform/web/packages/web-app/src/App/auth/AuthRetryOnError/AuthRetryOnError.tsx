@@ -7,7 +7,8 @@ export const AuthRetryOnError = () => {
   const searchParams = new URLSearchParams(search);
   const [retry, setRetry] = useState(searchParams.get("retry"));
   useEffect(() => {
-    const base = `${protocol}//${hostname}${port ? `:${port}` : ""}`;
+    const urlPort = port ? `:${port}` : ""
+    const base = `${protocol}//${hostname}${urlPort}`;
     if (!retry) {
       setRetry("true");
       login(base, {"retry": "true"}).catch(console.error);
@@ -15,7 +16,6 @@ export const AuthRetryOnError = () => {
   }, []);
     return (
       <div>
-        <div>wefwweinfnewifoewoif</div>
         <div>{retry}</div>
       </div>
     )
