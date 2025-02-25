@@ -1,5 +1,5 @@
 export * from './model'
-export * from './useAdressFields'
+export * from './useAddressFields'
 
 export const mergeFields = <T = any>(field: T, override?: Partial<T>): T => {
   return {

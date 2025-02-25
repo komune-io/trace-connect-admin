@@ -3,7 +3,7 @@ import { useMemo, useCallback, useState } from 'react'
 import {
   AddressFieldsName,
   mergeFields,
-  useAdressFields
+  useAddressFields
 } from '../../../Commons'
 import { FlatOrganization, Organization, organizationToFlatOrganization } from '../../Domain'
 import { siretValidation } from '../../Validation/siret'
@@ -98,7 +98,7 @@ export const useOrganizationFormFields = (
     setInseeOrganization
   ])
 
-  const { addressFields } = useAdressFields({
+  const { addressFields } = useAddressFields({
     //@ts-ignore
     fieldsOverride
   })

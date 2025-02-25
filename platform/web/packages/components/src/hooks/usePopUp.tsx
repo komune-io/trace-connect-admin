@@ -13,7 +13,7 @@ export interface UseConfirmationProps {
 export interface UseConfirmationType {
     popup: React.ReactNode
     isOpen: boolean
-    setOpen: (open: boolean) => void
+    setIsOpen: (open: boolean) => void
     open: () => void
     close: (event: React.ChangeEvent<{}>) => void
 }
@@ -21,18 +21,18 @@ export interface UseConfirmationType {
 export const useConfirmationPopUp = (props: UseConfirmationProps): UseConfirmationType => {
     const {  title, component, onConfirm, onConfirmClose = false  } = props
     const { t } = useTranslation()
-    const [isOpen, setOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
     const close = useCallback(
         (event: React.ChangeEvent<{}>) => {
             event.stopPropagation()
-            setOpen(false)
+            setIsOpen(false)
         },
         [],
     )
     const open = useCallback(
         () => {
-            setOpen(true)
+            setIsOpen(true)
         },
         [],
     )
@@ -40,9 +40,9 @@ export const useConfirmationPopUp = (props: UseConfirmationProps): UseConfirmati
     const handleOnConfirm = useCallback((event: React.ChangeEvent<{}>) => {
         onConfirm(event)
         if(onConfirmClose) {
-            setOpen(false)
+            setIsOpen(false)
         }
-    }, [setOpen, onConfirm, onConfirmClose])
+    }, [setIsOpen, onConfirm, onConfirmClose])
 
     const popup = useMemo(() => (
         <ConfirmationPopUp onConfirm={handleOnConfirm}  open={isOpen} onClose={(event) => close(event)}>
@@ -54,7 +54,7 @@ export const useConfirmationPopUp = (props: UseConfirmationProps): UseConfirmati
     return {
         popup,
         isOpen,
-        setOpen,
+        setIsOpen,
         close: close,
         open: open
     }

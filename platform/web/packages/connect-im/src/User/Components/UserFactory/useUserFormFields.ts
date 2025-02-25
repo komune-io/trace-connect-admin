@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react'
 import {
   AddressFieldsName,
   mergeFields,
-  useAdressFields
+  useAddressFields
 } from '../../../Commons'
 import { OrganizationId } from '../../../Organization'
 import { User } from '../../Domain'
@@ -101,7 +101,7 @@ export const useUserFormFields = <T extends User = User>(
     [user?.email, checkEmailValidity, t]
   )
 
-  const { addressFields } = useAdressFields({
+  const { addressFields } = useAddressFields({
     //@ts-ignore
     fieldsOverride
   })

@@ -13,14 +13,14 @@ export type AddressFieldsOverride = Partial<
   Record<AddressFieldsName, Partial<FormComposableField<AddressFieldsName>>>
 >
 
-export interface useAddressFieldsParams {
+export interface UseAddressFieldsProps {
   /**
    * use This prop to override the fields
    */
   fieldsOverride?: AddressFieldsOverride
 }
 
-export const useAdressFields = (params?: useAddressFieldsParams) => {
+export const useAddressFields = (params?: UseAddressFieldsProps) => {
   const { fieldsOverride } = params || {}
 
   const { t } = useTranslation()

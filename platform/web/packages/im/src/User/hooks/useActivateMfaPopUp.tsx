@@ -19,9 +19,9 @@ export const useActivateMfaPopUp = (_?: UseActivateMfaUserPopUpProps) => {
 
     const open = useCallback(
         () => {
-            popup.setOpen(true)
+            popup.setIsOpen(true)
         },
-        [popup.setOpen],
+        [popup.setIsOpen],
     )
 
     return {
