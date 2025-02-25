@@ -1,5 +1,4 @@
-import { FormikFormParams, useFormComposable } from '@komune-io/g2'
-import { imConfig, useAuth } from '@komune-io/g2'
+import { FormikFormParams, imConfig, useAuth, useFormComposable } from '@komune-io/g2'
 import { useCallback, useMemo } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { OrganizationId } from '../../../Organization'

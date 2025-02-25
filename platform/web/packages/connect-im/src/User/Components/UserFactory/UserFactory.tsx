@@ -1,6 +1,4 @@
 import { cx } from '@emotion/css'
-import { Option } from '@komune-io/g2'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
 import React, { useMemo } from 'react'
 import { User } from '../../Domain'
 import { Stack, StackProps } from '@mui/material'
@@ -8,9 +6,12 @@ import { useElementSize } from '@mantine/hooks'
 import { UserSummary } from '../UserSummary'
 import { useDeletableForm } from '../../../Commons/useDeletableForm'
 import {
+  BasicProps,
   FormComposable,
   FormComposableField,
-  FormComposableState
+  FormComposableState,
+  MergeMuiElementProps,
+  Option
 } from '@komune-io/g2'
 import {
   userFieldsName,

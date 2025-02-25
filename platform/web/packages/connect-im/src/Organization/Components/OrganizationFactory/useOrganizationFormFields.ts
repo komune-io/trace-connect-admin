@@ -1,13 +1,12 @@
-import { FormComposableField, FormComposableState } from '@komune-io/g2'
+import { FormComposableField, FormComposableState, validators } from '@komune-io/g2'
 import { useMemo, useCallback, useState } from 'react'
 import {
-  AdressFieldsName,
+  AddressFieldsName,
   mergeFields,
   useAdressFields
 } from '../../../Commons'
 import { FlatOrganization, Organization, organizationToFlatOrganization } from '../../Domain'
 import { siretValidation } from '../../Validation/siret'
-import { validators } from '@komune-io/g2'
 import { useTranslation } from 'react-i18next'
 
 export type organizationFieldsName =
@@ -17,7 +16,7 @@ export type organizationFieldsName =
   | 'description'
   | 'website'
   | 'roles'
-  | AdressFieldsName
+  | AddressFieldsName
 
 export type OrganizationFactoryFieldsOverride = Partial<
   Record<

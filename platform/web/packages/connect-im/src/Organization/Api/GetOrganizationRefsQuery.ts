@@ -6,8 +6,7 @@ import {
   UseQueryOptions
 } from '@tanstack/react-query'
 import { OrganizationRef } from '../Domain'
-import { request } from '@komune-io/g2'
-import { imConfig } from '@komune-io/g2'
+import { imConfig, request } from '@komune-io/g2'
 
 export interface OrganizationRefsAllQuery {}
 

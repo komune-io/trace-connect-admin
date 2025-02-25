@@ -1,16 +1,17 @@
 import { cx } from '@emotion/css'
 import { Stack, StackProps } from '@mui/material'
 import {
+  BasicProps,
   Form,
   FormField,
   FormPartialField,
-  useFormWithPartialFields
+  MergeMuiElementProps,
+  useFormWithPartialFields,
+  validators
 } from '@komune-io/g2'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
 import React, { useCallback, useEffect, useMemo } from 'react'
 import { UserId, UserUpdatePasswordCommand } from '../../Domain'
 import { FormikHelpers } from 'formik'
-import { validators } from '@komune-io/g2'
 import { useTranslation } from 'react-i18next'
 
 export type Validated = boolean

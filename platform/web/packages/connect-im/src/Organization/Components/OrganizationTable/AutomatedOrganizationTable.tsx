@@ -1,4 +1,4 @@
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
+import { BasicProps, QueryOptions, MergeMuiElementProps } from '@komune-io/g2'
 import { OrganizationTable, OrganizationTableProps } from './OrganizationTable'
 import { useGetOrganizations } from '../../Api'
 import { Organization, OrganizationId } from '../../Domain'
@@ -6,7 +6,6 @@ import {
   useOrganizationTableState,
   useOrganizationTableStateParams
 } from './useOrganizationTableState'
-import { QueryOptions } from '@komune-io/g2'
 
 export interface AutomatedOrganizationTableBasicProps<T extends Organization>
   extends BasicProps {

@@ -1,7 +1,11 @@
 import { Box, InputLabel, Typography } from '@mui/material'
-import { Action, Link } from '@komune-io/g2'
-import { PopUp } from '@komune-io/g2'
-import { BasicProps, MergeMuiElementProps } from '@komune-io/g2'
+import {
+  Action,
+  BasicProps,
+  Link,
+  MergeMuiElementProps,
+  PopUp
+} from '@komune-io/g2'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { useUserResetPassword } from '../../Api'
 import {

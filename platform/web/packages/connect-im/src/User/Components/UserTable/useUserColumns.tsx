@@ -2,12 +2,13 @@ import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   G2ColumnDef,
+  MenuItem,
+  MoreOptions,
   TableCellLink,
   TableCellProfile,
   TableCellText
 } from '@komune-io/g2'
 import { User } from '../../Domain'
-import { MenuItem, MoreOptions } from '@komune-io/g2'
 import { OrganizationId } from '../../../Organization'
 
 export type userTableColumns = 'givenName' | 'address' | 'email' | 'memberOf'

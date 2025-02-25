@@ -1,7 +1,7 @@
-import { useAuthenticatedRequest } from '@komune-io/g2'
 import { UserId } from '../Domain'
 import {
   CommandParams,
+  useAuthenticatedRequest,
   useCommandRequest
 } from '@komune-io/g2'
 
