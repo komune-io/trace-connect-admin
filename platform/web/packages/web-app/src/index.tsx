@@ -13,6 +13,7 @@ import { createRoot } from 'react-dom/client'
 import { AppRouter } from "App/routes";
 import { OidcConfiguration } from "@axa-fr/oidc-client";
 import { AlertHub } from "@komune-io/g2";
+import {AuthRetryOnError} from "./App/auth/AuthRetryOnError";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -46,6 +47,7 @@ root.render(
     <ThemeContextProvider theme={theme}>
       <KeycloakProvider
         configuration={oidcConfiguration}
+        authenticatingErrorComponent={AuthRetryOnError}
       >
         <OidcSecure>
           <AppProvider
