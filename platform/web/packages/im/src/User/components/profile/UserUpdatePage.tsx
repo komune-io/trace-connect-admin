@@ -16,6 +16,7 @@ export const UserUpdatePage = (props: UserUpdatePageProps) => {
 
     const { checkEmailValidity, fieldsOverride, formState, formActions, isLoading, user } = useUserFunctionalities({
         isUpdate: true,
+        multipleRoles: true,
         myProfile,
         userId
     })
