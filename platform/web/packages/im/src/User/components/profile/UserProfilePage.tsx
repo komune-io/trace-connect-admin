@@ -51,7 +51,8 @@ export const UserProfilePage = (props: UserProfilePageProps) => {
     const {formState, user, isLoading, getOrganizationUrl, fieldsOverride} = useUserFunctionalities({
         myProfile,
         userId,
-        readonly: true
+        readonly: true,
+        multipleRoles: true
     })
     const headerRightPart = useMemo(() => {
         if (!user) {
@@ -107,7 +108,7 @@ export const UserProfilePage = (props: UserProfilePageProps) => {
                     isLoading={isLoading}
                     user={user}
                     userId={userId}
-                    multipleRoles={false}
+                    multipleRoles={true}
                     getOrganizationUrl={getOrganizationUrl}
                     fieldsOverride={fieldsOverride}
                 />

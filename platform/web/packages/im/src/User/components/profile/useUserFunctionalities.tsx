@@ -13,10 +13,11 @@ interface UseUserFunctionalitiesParams {
     isCreate?: boolean
     myProfile?: boolean
     readonly?: boolean
+    multipleRoles?: boolean
 }
 
 export const useUserFunctionalities = (params?: UseUserFunctionalitiesParams) => {
-    const { isUpdate = false, isCreate = false, myProfile = false, organizationId, userId, readonly = false } = params ?? {}
+    const { isUpdate = false, isCreate = false, myProfile = false, organizationId, userId, readonly = false, multipleRoles = false } = params ?? {}
     const { t, i18n } = useTranslation();
     const navigate = useNavigate()
     const { keycloak, roles } = useExtendedAuth()
@@ -43,7 +44,7 @@ export const useUserFunctionalities = (params?: UseUserFunctionalitiesParams) =>
         userId,
         update: isUpdate,
         myProfile: myProfile,
-        multipleRoles: false,
+        multipleRoles,
         organizationId
     })
 

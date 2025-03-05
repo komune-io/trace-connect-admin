@@ -18,7 +18,8 @@ export const UserCreationPage = () => {
 
     const { checkEmailValidity, fieldsOverride, formState, formActions, isLoading, user } = useUserFunctionalities( {
         organizationId,
-        isCreate: true
+        isCreate: true,
+        multipleRoles: true
     })
     
     return (
