@@ -64,10 +64,10 @@ export const useUserPolicies = (
     return ({
       canCreate: policies.user.canCreate(),
       canUpdate: user && policies.user.canUpdate(user),
-      canUpdateRole: user && policies.user.canUpdateRole(),
+      canUpdateRole: policies.user.canUpdateRole(),
       canUpdateOrganization: policies.user.canUpdateMemberOf(),
       canDelete: user && policies.user.canDelete(user),
       canListAllUser: policies.user.canPage()
     })
-  }, [service, props])
+  }, [service, user])
 }

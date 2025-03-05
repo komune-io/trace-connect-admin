@@ -39,7 +39,7 @@ export const UserUpdatePage = (props: UserUpdatePageProps) => {
                     user={user}
                     userId={userId}
                     resetPasswordType={myProfile ? 'email' : undefined}
-                    multipleRoles={false}
+                    multipleRoles={true}
                     fieldsOverride={fieldsOverride}
                     checkEmailValidity={checkEmailValidity}
                 />

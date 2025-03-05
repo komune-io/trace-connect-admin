@@ -38,7 +38,7 @@ export const UserCreationPage = () => {
                     isLoading={isLoading}
                     user={user}
                     organizationId={organizationId}
-                    multipleRoles={false}
+                    multipleRoles={true}
                     fieldsOverride={fieldsOverride}
                     checkEmailValidity={checkEmailValidity}
                 />
