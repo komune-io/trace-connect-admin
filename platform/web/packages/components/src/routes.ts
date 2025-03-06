@@ -15,6 +15,8 @@ const IMRoutesAuthorizations = {
     "users/:userId/view": "open",
     "users/:userId/edit": ["im_user_write"],
     "myProfil": "open",
+    "myProfil/mfa/activate": "open",
+    "myProfil/mfa/disable": "open",
     "myProfil/edit": "open",
     "apiKeys": ["im_apikey_read"],
     "apiKeys/add": ["im_apikey_write"],

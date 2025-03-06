@@ -18,7 +18,7 @@ export interface UserDisabledEvent {
 }
 
 export const useUserDisable = (
-  params: CommandParams<UserDisableCommand, UserDisabledEvent>
+  params?: CommandParams<UserDisableCommand, UserDisabledEvent>
 ) => {
   const requestProps = useAuthenticatedRequest("im")
   return useCommandRequest<UserDisableCommand, UserDisabledEvent>(

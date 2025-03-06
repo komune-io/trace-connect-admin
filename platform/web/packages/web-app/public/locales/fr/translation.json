@@ -43,8 +43,9 @@
   "mfa": {
     "disable": "Désactiver le Multi-factor Authentication",
     "disableDescription": "Êtes-vous sûr de vouloir désactiver l'authentification ? Cela pourrait réduire la sécurité de votre compte.",
+    "disableConfirmation": "Vous serez redirigé vers la page d'authentification pour saisir votre nom d'utilisateur et votre mot de passe. Une fois re-authentifié, l'authentification multifacteur (MFA) pourra être supprimée.",
     "activate": "Activer le Multi-factor authentication",
-    "activateDescription": "Vous serez redirigé vers la page d'authentification pour saisir votre nom d'utilisateur et votre mot de passe. Une fois authentifié, la configuration de l'authentification multifacteur (MFA) commencera.",
+    "activateDescription": "Vous serez redirigé vers la page d'authentification pour saisir votre nom d'utilisateur et votre mot de passe. Une fois authentifié, la configuration de l'authentification multifacteur (MFA) commencera."
   },
   "organizationStatus": {
     "VALIDATED": "Validé",
