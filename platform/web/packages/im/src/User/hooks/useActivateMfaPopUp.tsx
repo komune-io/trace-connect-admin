@@ -13,7 +13,7 @@ export const useActivateMfaPopUp = (_?: UseActivateMfaUserPopUpProps) => {
         title: t("mfa.activate"),
         component: <Typography sx={{ margin: (theme) => `${theme.spacing(4)} 0` }}>{t("mfa.activateDescription")}</Typography>,
         onConfirm: () => keycloak.login(window.location.href, {
-            "acr_values": 'force-mfa'
+            "acr_values": 'password-otp'
         })
     });
 
