@@ -52,6 +52,12 @@ const imPages: PageRoute[] = [{
   path: "myProfil",
   element: <UserProfilePage myProfile />
 }, {
+  path: "myProfil/mfa/activate",
+  element: <UserProfilePage myProfile mfa="activate" />
+}, {
+  path: "myProfil/mfa/disable",
+  element: <UserProfilePage myProfile mfa="disable" />
+}, {
   path: "myProfil/edit",
   element: <UserUpdatePage myProfile />
 }, {

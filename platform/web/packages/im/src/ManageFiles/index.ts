@@ -1,2 +1,6 @@
+export * from "./api"
 export * from "./components"
+export * from "./hooks/useDeleteFilePopUp"
+export * from "./hooks/useFileUploadPopUp"
+export * from "./hooks/useFileUploadPopUp"
 export * from "./page"

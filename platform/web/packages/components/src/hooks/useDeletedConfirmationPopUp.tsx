@@ -7,6 +7,7 @@ export interface UseDeletedConfirmationProps {
     title: string
     component?: React.ReactNode
     onDelete: () => Promise<void>
+    onClosed?: () => void
 }
 
 export interface UseDeletedConfirmationType {
@@ -18,13 +19,14 @@ export interface UseDeletedConfirmationType {
 }
 
 export const useDeletedConfirmationPopUp = (props: UseDeletedConfirmationProps): UseDeletedConfirmationType => {
-    const {  title, component, onDelete } = props
+    const {  title, component, onDelete, onClosed } = props
     const { t } = useTranslation()
     const [isOpen, setOpen] = useState(false)
 
     const close = useCallback(
         (event: React.ChangeEvent<{}>) => {
             event.stopPropagation()
+            onClosed && onClosed()
             setOpen(false)
         },
         [],
