@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import {User, useUserDisableMfa} from "connect-im";
 import {useCallback, useEffect, useMemo} from "react";
 import {useQueryClient} from "@tanstack/react-query";
-import {useDeletedConfirmationPopUp, useExtendedAuth} from "components";
+import {useDeletedConfirmationPopUp, useExtendedAuth, useRoutesDefinition} from "components";
 import {isPasswordOtpAcrActivated} from "../../Mfa";
 
 interface UseDisableMfaUserPopUpProps {
@@ -18,7 +18,7 @@ export const useDisableMfaPopUp = (props: UseDisableMfaUserPopUpProps) => {
     const useDisableMfa = useUserDisableMfa({})
     const queryClient = useQueryClient()
     const { keycloak } = useExtendedAuth()
-    console.log("user", user)
+    const { myProfilMfaDisable } = useRoutesDefinition();
     const userDisableMfa = useCallback(async () => {
         user?.id && await useDisableMfa.mutateAsync({id: user?.id})
         await Promise.all([
@@ -36,7 +36,7 @@ export const useDisableMfaPopUp = (props: UseDisableMfaUserPopUpProps) => {
         } else {
             return {
                 message: t("mfa.disableConfirmation"),
-                onDelete: () => keycloak.login(window.location.href, {
+                onDelete: () => keycloak.login(myProfilMfaDisable(), {
                     "acr_values": 'password-otp'
                 })
             }

@@ -20,7 +20,6 @@ export const UserProfileMfaAction = ({ user, mfa }: UserProfileMfaActionProps) =
     const { myProfil, myProfilMfaActivate, myProfilMfaDisable } = useRoutesDefinition();
     const { policies } = useExtendedAuth();
     const queryClient = useQueryClient();
-
     const onMfaPopupClosed = useCallback(async () => {
         await queryClient.invalidateQueries({ queryKey: ["userGet"] });
         navigate(myProfil());

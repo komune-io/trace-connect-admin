@@ -26,7 +26,6 @@ export const useDeletedConfirmationPopUp = (props: UseDeletedConfirmationProps):
     const close = useCallback(
         (event: React.ChangeEvent<{}>) => {
             event.stopPropagation()
-            console.log("onClosed", onClosed)
             onClosed && onClosed()
             setOpen(false)
         },
