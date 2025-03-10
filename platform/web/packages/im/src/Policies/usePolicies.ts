@@ -19,10 +19,6 @@ export const usePolicies = (
     const hasUserWrite = service.is_im_user_write()
     const hasOrganizationWrite = service.is_im_organization_write()
     const hasApiKeyWrite = service.is_im_apikey_write()
-    console.log('props?.myOrganization', props?.myOrganization)
-    console.log('hasUserWrite', hasUserWrite)
-    console.log('hasOrganizationWrite', hasOrganizationWrite)
-    console.log('hasApiKeyWrite', hasApiKeyWrite)
     return ({
       apiKeys: {
         canFilter: hasSuperAdminRights,
