@@ -1,8 +1,6 @@
 import { Theme as AruiTheme} from "@komune-io/g2";
 import { DeepPartial } from "@komune-io/g2";
-import { PermanentHeader } from "components";
-import {config} from "./App/config";
-
+import {config, PermanentHeader} from "components";
 
 export const theme: DeepPartial<AruiTheme> = {// to complete and to use
   colors: {
@@ -11,5 +9,5 @@ export const theme: DeepPartial<AruiTheme> = {// to complete and to use
     background: config().theme?.colors?.background ?? "#FAF8F3",
   },
   permanentHeader: PermanentHeader,
-  logoUrl: "/connect.png"
+  logoUrl: config().theme?.logo?.url ?? "/logo.svg",
 };

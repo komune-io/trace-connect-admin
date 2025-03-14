@@ -1,7 +1,7 @@
 import { Drawer, DrawerProps, Stack, IconButton, Box } from '@mui/material'
 import { Apps } from "@mui/icons-material"
 import { AppsMenu, SystemApp } from './AppsMenu'
-import { TraceIcon } from '../icons'
+import { Logo } from '../icons'
 
 export interface SystemMenuProps extends DrawerProps {
     apps: SystemApp[]
@@ -39,7 +39,7 @@ export const SystemMenu = (props: SystemMenuProps) => {
                 >
                     <Apps />
                 </IconButton>
-                <TraceIcon style={{ width: "100%", height: "40px" }} />
+                <Logo style={{ width: "100%", height: "40px" }} />
                 <Box />
             </Stack>
             <AppsMenu apps={apps} />

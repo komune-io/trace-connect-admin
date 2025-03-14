@@ -1,9 +1,10 @@
 import { Box, IconButton } from "@mui/material"
 import { Link } from "react-router-dom"
-import { TraceIcon } from "../icons";
+import { Logo } from "../icons";
 import { Menu } from "@mui/icons-material";
 import { ElementType } from "react";
 import { ThemePermanentHeaderProps } from "@komune-io/g2";
+import { config } from "../config";
 
 export interface PermanentHeaderProps extends ThemePermanentHeaderProps {
     toggleOpenDrawer: () => void
@@ -11,6 +12,7 @@ export interface PermanentHeaderProps extends ThemePermanentHeaderProps {
 
 export const PermanentHeader: ElementType<PermanentHeaderProps> = (props: PermanentHeaderProps) => {
     const {toggleOpenDrawer} = props
+    const {theme} = config()
     return (
         <Box
             sx={{
@@ -30,7 +32,7 @@ export const PermanentHeader: ElementType<PermanentHeaderProps> = (props: Perman
                     display: "flex",
                 }}
             >
-                <TraceIcon style={{ width: "100%", height: "40px" }} />
+                <Logo src={theme?.logo?.url} style={{ width: "100%", height: "40px" }} />
             </Link>
             <IconButton onClick={toggleOpenDrawer}>
                 <Menu />
