@@ -6,6 +6,7 @@ import { FormComposableField, useFormComposable, FormComposable, Action, Link, v
 import { useTranslation } from "react-i18next";
 import { Stack } from "@mui/material"
 import { KcContext } from "../KcContext";
+import {getKcClsx} from "keycloakify/login/lib/kcClsx";
 
 export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) => {
     const { kcContext, i18n, doUseDefaultCss, Template, classes, } = props;
@@ -18,7 +19,7 @@ export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" 
 
     const initialValues = useMemo(() => ({
         ...login,
-        email: login.username,
+        email: login.username || auth.attemptedUsername,
         credentialId: auth?.selectedCredential
     }), [login, realm, auth?.selectedCredential])
 
@@ -41,53 +42,57 @@ export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" 
             params: {
                 textFieldType: "text",
                 disabled: usernameHidden,
-                inputProps: {
-                    tabIndex: 1
-                }
             },
-            validator: validators.requiredField(t)
+            validator: validators.requiredField(t),
+            customDisplay: (input) => (
+              <Stack
+                gap={2}
+                alignItems="flex-end"
+              >
+                  {input}
+                  {auth !== undefined && auth.showUsername && !auth.showResetCredentials &&
+                    <LoginRestartFlowButton {...props}/>
+                  }
+              </Stack>
+            )
         }, {
             name: "credentialId",
             type: "hidden"
         }, {
             name: "password",
             type: "textField",
-            //@ts-ignore
-            label: <Stack
-                direction="row"
-                gap={1}
-                justifyContent="space-between"
-            >
-                {msgStr("password")}
-                {realm.resetPasswordAllowed &&
-                    <Link tabIndex={4} sx={{ alignSelf: "center" }} variant="caption" href={url.loginResetCredentialsUrl}>{msgStr("doForgotPassword")}</Link>
-                }
-            </Stack>,
+            label: msgStr("password"),
             params: {
                 textFieldType: "password",
-                inputProps: {
-                    tabIndex: 2
-                }
             },
-            validator: validators.password(t)
-        }, ...(realm.rememberMe && !usernameHidden ? [{
-            name: "rememberMe",
-            type: "checkBox",
-            label: msgStr("rememberMe"),
-            params: {
-                inputProps: {
-                    tabIndex: 3
-                }
-            }
-        } as FormComposableField] : [])]
+            validator: validators.password(t),
+            customDisplay: (input) => (
+                <Stack
+                    gap={2}
+                    alignItems="flex-end"
+                >
+                    {input}
+                    {realm.resetPasswordAllowed &&
+                        <Link sx={{ color: "#828282", }} variant="caption" href={url.loginResetCredentialsUrl}>{msgStr("doForgotPassword")}</Link>
+                    }
+                </Stack>
+            )
+        }
+        ]
     }, [realm, msgStr, usernameHidden, t])
 
     const actions = useMemo((): Action[] => {
         return [{
             key: "logIn",
-            label: msgStr("doLogIn"),
+            label: msgStr("signIn"),
             type: "submit",
-            isLoading: isAuthenticating
+            sx: {
+                width: "90%",
+                alignSelf: "center",
+                mt: 1
+            },
+            isLoading: isAuthenticating,
+            size: "large"
         }]
     }, [isAuthenticating, msgStr])
 
@@ -113,9 +118,14 @@ export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" 
     return (
         <Template
             {...{ kcContext, i18n, doUseDefaultCss, classes }}
-            headerNode={msgStr("doLogIn")}
+            headerNode={msgStr("signInTitle")}
         >
             <FormComposable
+                sx={{
+                    "& .AruiActions-Wrapper": {
+                        justifyContent: "center"
+                    }
+                }}
                 fields={fields}
                 formState={formState}
                 actions={actions}
@@ -123,6 +133,46 @@ export const Login = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" 
                 method="post"
                 onSubmit={onSubmit}
             />
+            <Link
+                    variant="body2"
+                    href={url.registrationUrl}
+                    sx={{
+                        color: "#828282",
+                        textDecoration: "unset !important",
+                        mt: -1,
+                        alignSelf: "center"
+                    }}
+                >
+                    {`${msgStr("dontHaveAccount")} `}
+                    <span
+                    style={{
+                        textDecoration: "underline"
+                    }}
+                    >
+                       {msgStr("signUp")}
+                    </span>
+                </Link>
         </Template>
     );
 }
+
+
+export const LoginRestartFlowButton = (props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) => {
+    const { kcContext, i18n, doUseDefaultCss, classes} = props;
+
+    const { url } = kcContext;
+
+    const { msgStr } = i18n;
+    const { kcClsx } = getKcClsx({
+        doUseDefaultCss,
+        classes
+    });
+
+    return (
+      <div id="kc-username" className={kcClsx("kcFormGroupClass")}>
+          <Link sx={{ color: "#828282", }} variant="caption" href={url.loginRestartFlowUrl}>{msgStr("restartLoginTooltip")}</Link>
+      </div>
+    );
+}
+
+// fa-sync-alt fas

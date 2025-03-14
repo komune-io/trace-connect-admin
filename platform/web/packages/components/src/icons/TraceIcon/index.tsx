@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent } from './icon.svg'
+import ReactComponent from './icon.svg?react'
 import { MergeReactElementProps } from '@komune-io/g2'
 
 interface TraceIconProps {
