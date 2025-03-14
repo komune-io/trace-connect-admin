@@ -2,11 +2,16 @@ import { Link, LinkProps } from "react-router-dom";
 import { useMemo } from "react";
 import { MenuItems } from '@komune-io/g2'
 import { useLocation } from "react-router";
-import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
-import BusinessIcon from '@mui/icons-material/Business';
-import {AccountCircle, Login, Logout, VpnKeyRounded, Folder} from "@mui/icons-material";
+import {
+    SupervisedUserCircle,
+    Business,
+    AccountCircle, Login,
+    Logout, VpnKeyRounded, Folder
+} from '@mui/icons-material';
 import { TFunction } from "i18next";
 import { useExtendedAuth, useRoutesDefinition } from "components";
+import {config} from "../config";
+import {Avatar} from "@mui/material";
 
 interface MenuItem {
     key: string,
@@ -50,7 +55,7 @@ export const useMenu = (t: TFunction) => {
         key: "organizations",
         to: "/",
         label: t("organizations"),
-        icon: <BusinessIcon />,
+        icon: <Business />,
         isVisible: service.hasUserRouteAuth({route: "organizations"}),
         isSelected: location.pathname === "/" || location.pathname.includes(organizations())
     } as MenuItem] : [{
@@ -65,7 +70,7 @@ export const useMenu = (t: TFunction) => {
         key: "users",
         to: users(),
         label: t("users"),
-        icon: <SupervisedUserCircleIcon />,
+        icon: <SupervisedUserCircle />,
         isVisible: service.hasUserRouteAuth({route: "users"}) && service.is_im_user_read()
     },{
         key: "apiKeys",
@@ -86,15 +91,26 @@ export const useMenu = (t: TFunction) => {
 
 export const useUserMenu = (logout: () => void, login: () => void, t: TFunction) => {
     const location = useLocation()
-    const {service} = useExtendedAuth()
-    const {myProfil} = useRoutesDefinition()
+    const { service } = useExtendedAuth()
+    const { myProfil } = useRoutesDefinition()
+    const { applications = [] } = config()
+    const actions: MenuItem[] = useMemo(() => {
+        return applications.map((app) => ({
+            key: app.id,
+            label: app.name,
+            icon: (<Avatar  alt="App Icon" src={app.icon} variant="square"  sx={{ width: 24, height: 24 }} />),
+            action: () => window.location.href = app.url,
+        }))
+    }, [])
     const loggedMenu: MenuItem[] = useMemo(() => [{
         key: "profil",
         to: myProfil(),
         label: t("profil"),
         icon: <AccountCircle />,
         isVisible: service.hasUserRouteAuth({route: "myProfil"})
-    }, {
+    },
+    ...actions,
+    {
         key: "logout",
         action: logout,
         label: t("logout"),

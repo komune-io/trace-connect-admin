@@ -1,7 +1,16 @@
 
 export interface Config {
-    theme?: ThemeConfig
+    theme?: ThemeConfig,
+    applications?: ApplicationConfig[]
 }
+
+export interface ApplicationConfig {
+    id: string,
+    name: string,
+    url: string,
+    icon: string,
+}
+
 
 export interface ThemeConfig {
     colors?: ThemeColorsConfig,
