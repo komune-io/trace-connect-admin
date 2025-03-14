@@ -1,7 +1,7 @@
 services:
   im-keycloak:
-#    image: ${DOCKER_REPOSITORY}connect-admin-keycloak:${CONNECT_ADMIN_KEYCLOAK_VERSION}
-    image: ${DOCKER_REPOSITORY}im-keycloak:${VERSION_IM}
+    image: ${DOCKER_REPOSITORY}connect-admin-keycloak:${CONNECT_ADMIN_KEYCLOAK_VERSION}
+#    image: ${DOCKER_REPOSITORY}im-keycloak:${VERSION_IM}
     container_name: ${DOCKER_CONTAINER_PREFIX}-im-keycloak
 #    network_mode: host
     environment:
