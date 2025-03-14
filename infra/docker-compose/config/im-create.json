@@ -1,6 +1,25 @@
 {
-    "space": "${KC_REALM}",
+    "identifier": "${KC_REALM}",
     "theme": "${KC_REALM_THEME}",
     "locales": ["en", "fr"],
-    "adminUsers": []
+    "settings": {
+        "login": {
+            "registrationAllowed": true,
+            "resetPasswordAllowed": true,
+            "rememberMe": true,
+            "registrationEmailAsUsername": true
+        }
+    },
+    "adminUsers": [],
+    "smtp": {
+        "from": "dev@komune.io",
+        "fromDisplayName": "Dev Komune",
+        "replyTo": "no-reply@komune.io",
+        "replyToDisplayName": "No Reploy Komune",
+        "host": "im-fake-smtp",
+        "port": "1025",
+        "ssl": "",
+        "starttls": "",
+        "auth": ""
+    }
 }

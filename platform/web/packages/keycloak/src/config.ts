@@ -18,4 +18,4 @@ export interface ThemeColorsConfig {
 }
 
 // @ts-ignore
-export const config: () => Config = () => window._env_.config
+export const config: () => Config | undefined = () => window._env_.config

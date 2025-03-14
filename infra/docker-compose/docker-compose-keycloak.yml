@@ -1,9 +1,7 @@
 services:
   im-keycloak:
     image: ${DOCKER_REPOSITORY}connect-admin-keycloak:${CONNECT_ADMIN_KEYCLOAK_VERSION}
-#    image: ${DOCKER_REPOSITORY}im-keycloak:${VERSION_IM}
     container_name: ${DOCKER_CONTAINER_PREFIX}-im-keycloak
-#    network_mode: host
     environment:
       KC_DB_URL: 'jdbc:postgresql://im-keycloak-postgres/im-keycloak'
       KC_DB_PASSWORD: admin
@@ -15,7 +13,6 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: ${KC_ROOT_PASS}
       PROXY_ADDRESS_FORWARDING: "true"
       JDBC_PARAMS: "ssl=false"
-      #      KC_HOSTNAME_STRICT_HTTPS: "false"
       KC_HOSTNAME_STRICT_HTTPS: "true"
     ports:
       - '8080:8080'
