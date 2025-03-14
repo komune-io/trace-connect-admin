@@ -36,8 +36,7 @@ declare module "*.pdf" {
   export = value;
 }
 
-declare type Nullable<T> = T | null | undefined;
-declare type Array<T> = T[];
+declare type Nullable<T> = T | undefined;
 declare namespace kotlin.collections {
   type List<T> = T[];
 }

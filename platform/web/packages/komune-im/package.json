@@ -27,7 +27,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@komune-io/g2": "^0.6.0-alpha.8db9417",
+    "@komune-io/g2": "^0.7.0-alpha.76e38ef",
     "@mantine/hooks": "^7.6.2",
     "@mui/icons-material": "^5.15.14",
     "react-i18next": "^14.1.0",

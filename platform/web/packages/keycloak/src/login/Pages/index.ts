@@ -1,3 +1,5 @@
 export * from "./Login"
-export * from "./ResetPassword"
-export * from "./UpdatePassword"
+export * from "./LoginResetPassword.tsx"
+export * from "./LoginUpdatePassword.tsx"
+export * from "./Info"
+export * from "./LoginVerifyEmail"
