@@ -105,6 +105,7 @@ export const UserProfilePage = ({ myProfile = false, mfa }: UserProfilePageProps
                 multipleRoles
                 getOrganizationUrl={getOrganizationUrl}
                 fieldsOverride={fieldsOverride}
+                resetPasswordType={"email"}
               />
           </Section>
           {deleteUserPopupElement}
