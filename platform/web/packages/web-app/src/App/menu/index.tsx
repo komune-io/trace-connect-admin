@@ -9,8 +9,7 @@ import {
     Logout, VpnKeyRounded, Folder
 } from '@mui/icons-material';
 import { TFunction } from "i18next";
-import { useExtendedAuth, useRoutesDefinition } from "components";
-import {config} from "../config";
+import {config, useExtendedAuth, useRoutesDefinition} from "components";
 import {Avatar} from "@mui/material";
 
 interface MenuItem {
@@ -98,7 +97,7 @@ export const useUserMenu = (logout: () => void, login: () => void, t: TFunction)
         return applications.map((app) => ({
             key: app.id,
             label: app.name,
-            icon: (<Avatar  alt="App Icon" src={app.icon} variant="square"  sx={{ width: 24, height: 24 }} />),
+            icon: (<Avatar alt="App Icon" src={app.icon} variant="square"  sx={{ width: 24, height: 24 }} />),
             action: () => window.location.href = app.url,
         }))
     }, [])

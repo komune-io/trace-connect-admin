@@ -1,1 +1,1 @@
-export * from "./TraceIcon"
+export * from "./Logo"

@@ -14,6 +14,7 @@ export interface ApplicationConfig {
 
 export interface ThemeConfig {
     colors?: ThemeColorsConfig,
+    logo?: ThemeLogoConfig
 }
 
 export interface ThemeColorsConfig {
@@ -22,6 +23,9 @@ export interface ThemeColorsConfig {
     background?: string
 }
 
+export interface ThemeLogoConfig {
+    url?: string,
+}
 
 // @ts-ignore
 export const config: () => Config = () => window._env_.config
