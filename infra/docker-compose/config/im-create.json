@@ -16,7 +16,7 @@
         "fromDisplayName": "Dev Komune",
         "replyTo": "no-reply@komune.io",
         "replyToDisplayName": "No Reploy Komune",
-        "host": "im-fake-smtp",
+        "host": "connect-admin-connect-fake-smtp",
         "port": "1025",
         "ssl": "",
         "starttls": "",
