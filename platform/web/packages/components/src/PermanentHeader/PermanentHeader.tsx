@@ -32,7 +32,7 @@ export const PermanentHeader: ElementType<PermanentHeaderProps> = (props: Perman
                     display: "flex",
                 }}
             >
-                <Logo src={theme?.logo?.url} style={{ width: "100%", height: "40px" }} />
+                <Logo src={theme?.logo?.url} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             </Link>
             <IconButton onClick={toggleOpenDrawer}>
                 <Menu />

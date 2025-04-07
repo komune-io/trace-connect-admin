@@ -76,11 +76,11 @@ export const getUserRolesOptions = (lang: string, roles?: Role[]) => {
 }
 
 
-export const getUserOrganizationRolesOptions = (lang: string, orgRole?: Role, roles?: Role[]) => {
-    if (!roles || !orgRole) return []
+export const getUserOrganizationRolesOptions = (lang: string, orgRoles?: Role[], roles?: Role[]) => {
+    if (!roles || !orgRoles) return []
 
     const options: Option[] = []
-    const targetedUserRoles: Role[] = orgRole.bindings["USER"]
+    const targetedUserRoles: Role[] = orgRoles?.flatMap(orgRole => orgRole.bindings["USER"])
     if (Object.keys(targetedUserRoles).length === 0) return []
     roles.forEach((role) => {
         if (targetedUserRoles.find((target) => target.identifier === role.identifier)) {

@@ -52,8 +52,8 @@ export const useUserFunctionalities = (params?: UseUserFunctionalitiesParams) =>
 
     const rolesOptions = useMemo(() => {
         const org = getOrganizationRefs.query.data?.items.find((org) => org.id === formState.values.memberOf)
-        const orgRole = roles?.find((role: any) => role.identifier === org?.roles[0])
-        return getUserOrganizationRolesOptions(i18n.language, orgRole, roles)
+        const orgRoles = roles?.filter(role => (org?.roles ?? []).includes(role.identifier)) ?? []
+        return getUserOrganizationRolesOptions(i18n.language, orgRoles, roles)
     }, [i18n.language, t, getOrganizationRefs.query.data?.items, formState.values.memberOf, roles])
 
     const getOrganizationUrl = useCallback(
