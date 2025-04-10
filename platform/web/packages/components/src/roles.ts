@@ -115,7 +115,7 @@ export const getOrgRolesOptions = (lang: string, roles?: Role[]) => {
 
 export const getApiKeysRolesOptions = (lang: string, orgRole?: Role, roles?: Role[]) => {
     if (!roles || !orgRole) return []
-    const targetedRoles: Role[] = orgRole.bindings["API_KEY"]
+    const targetedRoles: Role[] = orgRole.bindings["API_KEY"] ?? []
     if (Object.keys(targetedRoles).length === 0) return []
     const options: Option[] = []
     roles.forEach(role => {
