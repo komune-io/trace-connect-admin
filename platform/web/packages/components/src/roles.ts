@@ -126,8 +126,7 @@ export const getApiKeysRolesOptions = (lang: string, orgRole?: Role, roles?: Rol
                 color: getUserRoleColor(role.identifier)
             })
         }
-    }
-    )
+    })
     return options
 }
 
@@ -137,6 +136,7 @@ export const permissions = [
     "im_organization_read",
     "im_organization_write_own",
     "im_organization_write",
+    "im_organization_apikey_read",
     "im_role_read",
     "im_role_write",
     "im_apikey_read",
